@@ -1,7 +1,15 @@
-<footer class="footer-main">
-    {{ site.name }} © {{ site.time | date: '%Y' }} <a class="link" href="{{ site.url }}/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+<footer>
+<hr/>
+  <div class="left">  
+    &copy;{{ site.time | date:"%Y" }}.
+    Built with <a href="http://jekyllrb.com/">Jekyll</a> and
+    <a href="https://github.com/railsr/autm-rb">Autm-rb</a>
+  </div>
 
-    <p class="extra">
-        <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a> by <a class="link" href="http://koppl.in">Kopplin</a>
-    </p>
+  <div class="right">
+    {% unless site.twitter == "" %}
+      <a href="{{site.twitter}}"><i class="fa fa-twitter fa-lg" style="color:#49B1F7;"></i></a>
+    </a>
+    {% endunless %}
+  </div>
 </footer>
