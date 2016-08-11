@@ -1,6 +1,6 @@
 # main text of home
 name: Matthew J. Neave
-bio: A Man who travels the world eating noodles
+bio: Bioinformatics - Data Science
 
 # twitter summary info
 description: A blog about technology and stuff related
@@ -10,7 +10,7 @@ description: A blog about technology and stuff related
 external-image: false
 picture: assets/images/profile.jpg
 
-url: http://koppl.in/indigo
+url: http://neavemj.github.io
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
@@ -34,13 +34,13 @@ twitter: mytwitter
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
-# linkedin: mylinkedin
-youtube: myyoutube
-spotify: myspotify
+linkedin: mylinkedin
+#youtube: myyoutube
+#spotify: myspotify
 github: mygithub
-medium: medium
-vimeo: myvimeo
-email: myemail@gmail.com
+#medium: medium
+#vimeo: myvimeo
+email: matthewjneave1@gmail.com
 
 authors:
     johndoe:
@@ -69,8 +69,8 @@ width: normal
 projects: true
 
 # if you don't need "about" or "blog", comment them out below
-about: false
-blog: true
+about: true
+blog: false
 
 # do you want to show the "read time" of the posts?
 read-time: true
