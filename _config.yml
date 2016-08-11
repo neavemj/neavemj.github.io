@@ -7,7 +7,7 @@ paginate_path: /blog/page:num #makes pagination working
 
 #contacts
 git: "https://github.com/neavemj"  #your github url here.
-stackoverflow: "http://stackoverflow.com/users/1231365/railsr" #Add your stackoverflow url here.
+stackoverflow: "" #Add your stackoverflow url here.
 twitter: "https://twitter.com/railsr7"  #Add your twitter url here.
 
 #disqus comment
