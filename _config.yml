@@ -1,9 +1,9 @@
 baseurl: "" # The subpath of your site. Use "" if you're hosting a blog at the root level.
-url: "neavemj.github.io" # the base hostname & protocol for your site.
+url: "https://neavemj.github.io" # the base hostname & protocol for your site.
 title: "Matthew J. Neave"
 
 paginate: 10 #articles per page
-paginate_path: /blog/page:num #makes pagination working
+paginate_path: /projects/page:num #makes pagination working
 
 #contacts
 git: "https://github.com/neavemj"  #your github url here.
@@ -30,6 +30,7 @@ exclude:
   - "CHANGELOG.md"
   - "Gemfile"
   - "Gemfile.lock"
+  - "vendor"
 
 permalink: /posts/:title
 
