@@ -274,7 +274,7 @@ compOrdinations(spistPhyloRelSqrt, "S. pistillata MED OTUs")
 ## ... procrustes: rmse 0.08223169  max resid 0.3308432
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png?raw=true) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-1.png?raw=true) 
 
 ```r
 compOrdinations(spist3OTUphyloRelSqrt, "S. pistillata 3% OTUs")
@@ -307,7 +307,7 @@ compOrdinations(spist3OTUphyloRelSqrt, "S. pistillata 3% OTUs")
 ## Run 20 stress 0.2486001
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-2.png) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-2.png?raw=true) 
 
 ```r
 compOrdinations(spist1OTUphyloRelSqrt, "S. pistillata 1% OTUs")
@@ -340,7 +340,7 @@ compOrdinations(spist1OTUphyloRelSqrt, "S. pistillata 1% OTUs")
 ## *** Solution reached
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-3.png) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-3.png?raw=true) 
 
 ```r
 compOrdinations(pverrPhyloRelSqrt, "P. verrucosa MED OTUs")
@@ -374,7 +374,7 @@ compOrdinations(pverrPhyloRelSqrt, "P. verrucosa MED OTUs")
 ## Run 20 stress 0.223437
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-4.png) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-4.png?raw=true) 
 
 ```r
 compOrdinations(pverr3OTUphyloRelSqrt, "P. verrucosa 3% OTUs")
@@ -419,7 +419,7 @@ compOrdinations(pverr3OTUphyloRelSqrt, "P. verrucosa 3% OTUs")
 ## Run 20 stress 0.2518367
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-5.png) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-5.png?raw=true) 
 
 ```r
 compOrdinations(pverr1OTUphyloRelSqrt, "P. verrucosa 1% OTUs")
@@ -453,7 +453,7 @@ compOrdinations(pverr1OTUphyloRelSqrt, "P. verrucosa 1% OTUs")
 ## Run 20 stress 0.2281152
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-6.png) 
+![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-6.png?raw=true) 
 
 ### Alpha diversity measures
 
@@ -511,7 +511,7 @@ ggplot(data = allAlphaPlot2$data) + geom_point(aes(x = species, y = value, color
 ## Warning: Removed 4 rows containing missing values (geom_point).
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-8-1.png?raw=true) 
 
 Check for significant differences in the alpha diversity measures using a kruskal-wallis test and a dunn post-hoc test to check which specific groups were different
 
@@ -673,7 +673,7 @@ simprof.plot(spistSIMPROF, leafcolors = NA, plot = TRUE, fill = TRUE, leaflab = 
     siglinetype = 1)
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-10-1.png?raw=true) 
 
 ```
 ## 'dendrogram' with 2 branches and 73 members total, at height 99.58749
@@ -714,7 +714,7 @@ simprof.plot(pVerrSIMPROF, leafcolors = NA, plot = TRUE, fill = TRUE, leaflab = 
     siglinetype = 1)
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-2.png) 
+![plot of chunk unnamed-chunk-10](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-10-2.png?raw=true) 
 
 ```
 ## 'dendrogram' with 2 branches and 53 members total, at height 99.459
@@ -812,7 +812,7 @@ draw_envfit_ord(spistChem, waterQual)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-1.png?raw=true) 
 
 ```r
 draw_envfit_ord(spistChem, nutrients)
@@ -863,7 +863,7 @@ draw_envfit_ord(spistChem, nutrients)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-2.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-2.png?raw=true) 
 
 ```r
 draw_envfit_ord(spistChem, FCM)
@@ -914,7 +914,7 @@ draw_envfit_ord(spistChem, FCM)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-3.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-3.png?raw=true) 
 
 ```r
 draw_envfit_ord(pverrChem, waterQual)
@@ -971,7 +971,7 @@ draw_envfit_ord(pverrChem, waterQual)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-4.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-4.png?raw=true) 
 
 ```r
 draw_envfit_ord(pverrChem, nutrients)
@@ -1030,7 +1030,7 @@ draw_envfit_ord(pverrChem, nutrients)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-5.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-5.png?raw=true) 
 
 ```r
 draw_envfit_ord(pverrChem, FCM)
@@ -1093,7 +1093,7 @@ draw_envfit_ord(pverrChem, FCM)
 ## Number of permutations: 999
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-6.png) 
+![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-6.png?raw=true) 
 
 ### Taxonomic barcharts of bacteria in the corals and seawaters, and core microbiome members
 
@@ -1161,7 +1161,7 @@ draw_barcharts(spistFilt, "Phylum") # 0.2
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-1.png?raw=true) 
 
 ```r
 draw_barcharts(spistFilt, "Class") # 0.5
@@ -1180,7 +1180,7 @@ draw_barcharts(spistFilt, "Class") # 0.5
 ## Warning: Removed 1 rows containing missing values (geom_text).
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-2.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-2.png?raw=true) 
 
 ```r
 draw_barcharts(spistFilt, "Genus") # 0.8    # 1500 x 700
@@ -1199,7 +1199,7 @@ draw_barcharts(spistFilt, "Genus") # 0.8    # 1500 x 700
 ## Warning: Removed 1 rows containing missing values (geom_text).
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-3.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-3.png?raw=true) 
 
 ```r
 pVerr <- subset_samples(allPhylo, species=='Pocillopora verrucosa')
@@ -1216,7 +1216,7 @@ draw_barcharts(pVerrFilt, "Phylum") # 0.3
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-4.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-4.png?raw=true) 
 
 ```r
 draw_barcharts(pVerrFilt, "Class") # 0.45
@@ -1234,7 +1234,7 @@ draw_barcharts(pVerrFilt, "Class") # 0.45
 ## Warning: Removed 1 rows containing missing values (geom_text).
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-5.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-5.png?raw=true) 
 
 ```r
 draw_barcharts(pVerrFilt, "Genus") # 0.6    # 1500 x 600
@@ -1248,7 +1248,7 @@ draw_barcharts(pVerrFilt, "Genus") # 0.6    # 1500 x 600
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-6.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-6.png?raw=true) 
 
 ```r
 sea <- subset_samples(allPhylo, species=='seawater')
@@ -1265,7 +1265,7 @@ draw_barcharts(seaFilt, "Phylum") # 0.1
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-7.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-7.png?raw=true) 
 
 ```r
 draw_barcharts(seaFilt, "Class") # 0.1
@@ -1279,7 +1279,7 @@ draw_barcharts(seaFilt, "Class") # 0.1
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-8.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-8.png?raw=true) 
 
 ```r
 draw_barcharts(seaFilt, "Family")           # 1200 x 600
@@ -1293,7 +1293,7 @@ draw_barcharts(seaFilt, "Family")           # 1200 x 600
 ## ymax not defined: adjusting position using y instead
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-9.png) 
+![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-9.png?raw=true) 
 
 The two corals are both dominated by Gammaproteobacteria at the higher taxonomic levels. At the genus level, there is more variability but Endozoicomonas seem to be fairly prevalent. Let's check which bacterial genera are most consistently associated with the corals and may be considered a 'core' microbiome member.
 
@@ -1370,14 +1370,14 @@ plot_heatmap(spistPverrEndoFiltPrune, "NMDS", "bray", "site", low = "#000033", h
     sample.order = rownames(metaFile3))
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
+![plot of chunk unnamed-chunk-14](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-14-1.png?raw=true) 
 
 ```r
 plot_heatmap(spistPverrEndoFiltPrune, "NMDS", "bray", "species", low = "#000033", 
     high = "#FF3300", sample.order = rownames(metaFile3))
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-2.png) 
+![plot of chunk unnamed-chunk-14](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-14-2.png?raw=true) 
 
 Pretty cool. Looks like the two corals have different Endozoicomonas types, and the types also seem to partition differently across sites for the coral species, i.e., Pocillopora verrucosa has similar Endozoicomonas types across large geographic areas but Stylophora pistillata seems to have different Endozoicomonas types at each area. Let's do some significance testing to see if more of the Endozoicomonas OTUs are different across sites for S. pistillata compared to P. verrucosa.
 
@@ -1814,7 +1814,7 @@ plot_tree(endoTreeCorals, label.tips = "taxa_names", color = "site", shape = "sp
     `Pocillopora verrucosa` = 17, `Stylophora pistillata` = 16, seawater = 15))
 ```
 
-![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png) 
+![plot of chunk unnamed-chunk-16](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-16-1.png?raw=true) 
 
 Some interesting things coming up here. Several abundant but phylogenetically diverse Endozoicomonas OTUs appear to co-inhabit the same coral colonies. There are also clear host and site groupings of Endozoicomonas strains. I also included single cell 16S sequences in the tree and they are identical to the abundant MED OTUs from the Red Sea, suggesting that the MED procedure produces biologically relevant OTUs. Also in the tree are sequences from an earlier study of Red Sea Stylophora pistillata, named 'Spistillata_17_6_E02, Spistillata_12_6_A02, Spistillata_15_6_D04', and these are also the same as the abundant MED nodes in this study, suggesting that the most abundant MED OTUs in Red Sea S. pistillata have not changed for ~ 4 years.
 
