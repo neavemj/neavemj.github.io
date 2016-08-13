@@ -12,7 +12,7 @@ Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., 
 
 ### Load required libraries  
 
-
+{% highlight R %}
 ```r
 library("phyloseq"); packageVersion("phyloseq")
 ```
@@ -106,6 +106,7 @@ setwd("./data")
 opts_knit$set(root.dir = "./data")
 #opts_chunk$set(tidy.opts=list(width.cutoff=80))
 ```
+{% endhighlight %}
 
 ### Import data
 
