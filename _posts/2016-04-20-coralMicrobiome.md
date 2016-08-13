@@ -257,8 +257,8 @@ compOrdinations(spistPhyloRelSqrt, "S. pistillata MED OTUs")
 ## Run 20 stress 0.2243104 
 ## ... New best solution
 ## ... procrustes: rmse 0.08223169  max resid 0.3308432
-```  
-
+```
+<br>
 ![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-1.png?raw=true) 
 
 ```r
