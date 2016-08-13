@@ -161,6 +161,7 @@ metaFileChem = read.table('metaDataChem.txt', header=T, sep='\t', row.names=1)
 ```
 
 <br>
+
 ### Create phyloseq objects and add consistent coloring for sites
 
 
@@ -655,6 +656,7 @@ simprof.plot(pVerrSIMPROF, leafcolors = NA, plot = TRUE, fill = TRUE, leaflab = 
 ```
 
 <br>
+
 ### Chemical and biological correlations
 
 Use the envfit function from the Vegan package to test if any environmental variables are significantly correlated with microbiome differences in the corals
