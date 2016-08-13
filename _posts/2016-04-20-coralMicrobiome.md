@@ -274,7 +274,7 @@ compOrdinations(spistPhyloRelSqrt, "S. pistillata MED OTUs")
 ## ... procrustes: rmse 0.08223169  max resid 0.3308432
 ```
 
-![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-1.png?raw=true) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png?raw=true) 
 
 ```r
 compOrdinations(spist3OTUphyloRelSqrt, "S. pistillata 3% OTUs")
