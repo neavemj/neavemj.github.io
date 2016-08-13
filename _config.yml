@@ -12,7 +12,7 @@ twitter: "https://twitter.com/MatthewNeave"  #Add your twitter url here.
 
 #disqus comment
 disqus:
-    shortname: "" #your disqus comment short name
+    shortname: "Matt" #your disqus comment short name
 
 #google analytics
 google:
