@@ -10,12 +10,11 @@ This is an R Markdown document detailing the statistical and graphical steps for
 
 Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., Voolstra, C.R. (2016). Differential specificity between closely related corals and abundant Endozoicomonas endosymbionts across global scales. The ISME Journal.
 
-### Load required libraries  
+### First I will load the required libraries and print their versions  
 
 ```r
 library("phyloseq"); packageVersion("phyloseq")
 ```
-
 ```
 ## [1] '1.10.0'
 ```
@@ -23,7 +22,6 @@ library("phyloseq"); packageVersion("phyloseq")
 ```r
 library("ggplot2"); packageVersion("ggplot2")
 ```
-
 ```
 ## [1] '1.0.1'
 ```
@@ -31,7 +29,6 @@ library("ggplot2"); packageVersion("ggplot2")
 ```r
 library("plyr"); packageVersion("plyr")
 ```
-
 ```
 ## [1] '1.8.1'
 ```
@@ -39,7 +36,6 @@ library("plyr"); packageVersion("plyr")
 ```r
 library("vegan"); packageVersion("vegan")
 ```
-
 ```
 ## [1] '2.2.1'
 ```
@@ -47,7 +43,6 @@ library("vegan"); packageVersion("vegan")
 ```r
 library("grid"); packageVersion("grid")
 ```
-
 ```
 ## [1] '3.1.1'
 ```
@@ -55,7 +50,6 @@ library("grid"); packageVersion("grid")
 ```r
 library("knitr"); packageVersion("knitr")
 ```
-
 ```
 ## [1] '1.11'
 ```
@@ -63,7 +57,6 @@ library("knitr"); packageVersion("knitr")
 ```r
 library("clustsig"); packageVersion("clustsig")
 ```
-
 ```
 ## [1] '1.1'
 ```
@@ -71,7 +64,6 @@ library("clustsig"); packageVersion("clustsig")
 ```r
 library('ape'); packageVersion("ape")
 ```
-
 ```
 ## [1] '3.2'
 ```
@@ -79,7 +71,6 @@ library('ape'); packageVersion("ape")
 ```r
 library('RColorBrewer'); packageVersion("RColorBrewer")
 ```
-
 ```
 ## [1] '1.1.2'
 ```
@@ -87,7 +78,6 @@ library('RColorBrewer'); packageVersion("RColorBrewer")
 ```r
 library("dunn.test"); packageVersion("dunn.test")
 ```
-
 ```
 ## [1] '1.3.1'
 ```
@@ -95,7 +85,6 @@ library("dunn.test"); packageVersion("dunn.test")
 ```r
 library("DESeq2"); packageVersion("DESeq2")
 ```
-
 ```
 ## [1] '1.6.3'
 ```
@@ -105,6 +94,7 @@ setwd("./data")
 opts_knit$set(root.dir = "./data")
 #opts_chunk$set(tidy.opts=list(width.cutoff=80))
 ```
+
 
 ### Import data
 
@@ -118,11 +108,6 @@ allTax = read.table("all.7974.nodeReps.nr_v119.knn.taxonomy", header = T, sep = 
     row.names = 1)
 ```
 
-```
-## Warning in scan(file, what, nmax, sep, dec, quote, skip, nlines,
-## na.strings, : number of items read is not a multiple of the number of
-## columns
-```
 
 ```r
 allTax = allTax[, 2:8]
@@ -272,7 +257,7 @@ compOrdinations(spistPhyloRelSqrt, "S. pistillata MED OTUs")
 ## Run 20 stress 0.2243104 
 ## ... New best solution
 ## ... procrustes: rmse 0.08223169  max resid 0.3308432
-```
+```  
 
 ![plot of chunk unnamed-chunk-7](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-7-1.png?raw=true) 
 
@@ -479,38 +464,6 @@ ggplot(data = allAlphaPlot2$data) + geom_point(aes(x = species, y = value, color
         "seawater"))
 ```
 
-```
-## Warning: Removed 3 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 7 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 4 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 6 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 4 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 7 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 4 rows containing missing values (geom_point).
-```
-
-```
-## Warning: Removed 4 rows containing missing values (geom_point).
-```
-
 ![plot of chunk unnamed-chunk-8](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-8-1.png?raw=true) 
 
 Check for significant differences in the alpha diversity measures using a kruskal-wallis test and a dunn post-hoc test to check which specific groups were different
@@ -644,28 +597,10 @@ spistShared = otu_table(spist)
 class(spistShared) <- "numeric"
 ```
 
-```
-## Warning in class(spistShared) <- "numeric": Setting class(x) to "numeric"
-## sets attribute to NULL; result will no longer be an S4 object
-```
-
 ```r
 spistSIMPROF <- simprof(spistShared, num.expected = 1000, num.simulated = 99, method.cluster = "average", 
     method.distance = "braycurtis", method.transform = "squareroot", alpha = 0.05, 
     sample.orientation = "row", silent = TRUE)
-```
-
-```
-## Warning: This version of the Bray-Curtis index does not use
-## standardization.
-```
-
-```
-## Warning: To use the standardized version, use "actual-braycurtis".
-```
-
-```
-## Warning: See the help documentation for more information.
 ```
 
 ```r
@@ -685,28 +620,10 @@ pVerrShared = otu_table(pVerr)
 class(pVerrShared) <- "numeric"
 ```
 
-```
-## Warning in class(pVerrShared) <- "numeric": Setting class(x) to "numeric"
-## sets attribute to NULL; result will no longer be an S4 object
-```
-
 ```r
 pVerrSIMPROF <- simprof(pVerrShared, num.expected = 1000, num.simulated = 99, method.cluster = "average", 
     method.distance = "braycurtis", method.transform = "squareroot", alpha = 0.05, 
     sample.orientation = "row", silent = TRUE)
-```
-
-```
-## Warning: This version of the Bray-Curtis index does not use
-## standardization.
-```
-
-```
-## Warning: To use the standardized version, use "actual-braycurtis".
-```
-
-```
-## Warning: See the help documentation for more information.
 ```
 
 ```r
@@ -952,11 +869,6 @@ draw_envfit_ord(pverrChem, waterQual)
 ```
 
 ```
-## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
-## half-change scaling: too few points below threshold
-```
-
-```
 ## 
 ## ***VECTORS
 ## 
@@ -1009,10 +921,6 @@ draw_envfit_ord(pverrChem, nutrients)
 ## Run 20 stress 0.2605074
 ```
 
-```
-## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
-## half-change scaling: too few points below threshold
-```
 
 ```
 ## 
@@ -1072,10 +980,6 @@ draw_envfit_ord(pverrChem, FCM)
 ## ... procrustes: rmse 0.03141653  max resid 0.1071445
 ```
 
-```
-## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
-## half-change scaling: too few points below threshold
-```
 
 ```
 ## 
@@ -1145,21 +1049,13 @@ ggplot(physeqdfOther, aes_string(x="names", y="Abundance", fill=tax_level, order
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 }
 
-# subset coral samples, create names factor for label ordering and filter so the graph isn't too full
+# subset coral samples, create names factor for label ordering and filter so the graph is not too full
 spist <- subset_samples(allPhylo, species=='Stylophora pistillata')
 sample_data(spist)$names <- factor(sample_names(spist), levels=rownames(metaFile), ordered = TRUE)
 spistFilt = filter_taxa(spist, function(x) mean(x) > 0.8, TRUE)
 draw_barcharts(spistFilt, "Phylum") # 0.2
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-1.png?raw=true) 
 
@@ -1167,14 +1063,6 @@ draw_barcharts(spistFilt, "Phylum") # 0.2
 draw_barcharts(spistFilt, "Class") # 0.5
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ```
 ## Warning: Removed 1 rows containing missing values (geom_text).
@@ -1186,14 +1074,6 @@ draw_barcharts(spistFilt, "Class") # 0.5
 draw_barcharts(spistFilt, "Genus") # 0.8    # 1500 x 700
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ```
 ## Warning: Removed 1 rows containing missing values (geom_text).
@@ -1208,13 +1088,6 @@ pVerrFilt = filter_taxa(pVerr, function(x) mean(x) > 0.45, TRUE)
 draw_barcharts(pVerrFilt, "Phylum") # 0.3
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-4.png?raw=true) 
 
@@ -1222,13 +1095,6 @@ draw_barcharts(pVerrFilt, "Phylum") # 0.3
 draw_barcharts(pVerrFilt, "Class") # 0.45
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ```
 ## Warning: Removed 1 rows containing missing values (geom_text).
@@ -1240,13 +1106,6 @@ draw_barcharts(pVerrFilt, "Class") # 0.45
 draw_barcharts(pVerrFilt, "Genus") # 0.6    # 1500 x 600
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-6.png?raw=true) 
 
@@ -1257,13 +1116,6 @@ seaFilt = filter_taxa(sea, function(x) mean(x) > 0.5, TRUE)
 draw_barcharts(seaFilt, "Phylum") # 0.1
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-7.png?raw=true) 
 
@@ -1271,13 +1123,6 @@ draw_barcharts(seaFilt, "Phylum") # 0.1
 draw_barcharts(seaFilt, "Class") # 0.1
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-8.png?raw=true) 
 
@@ -1285,13 +1130,6 @@ draw_barcharts(seaFilt, "Class") # 0.1
 draw_barcharts(seaFilt, "Family")           # 1200 x 600
 ```
 
-```
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-## ymax not defined: adjusting position using y instead
-```
 
 ![plot of chunk unnamed-chunk-12](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-12-9.png?raw=true) 
 
