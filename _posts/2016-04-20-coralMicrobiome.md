@@ -14,85 +14,62 @@ Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., 
 
 ```r
 library("phyloseq"); packageVersion("phyloseq")
-```
-```
 ## [1] '1.10.0'
 ```
 
 ```r
 library("ggplot2"); packageVersion("ggplot2")
-```
-```
 ## [1] '1.0.1'
 ```
 
 ```r
 library("plyr"); packageVersion("plyr")
-```
-```
 ## [1] '1.8.1'
 ```
 
 ```r
 library("vegan"); packageVersion("vegan")
-```
-```
 ## [1] '2.2.1'
 ```
 
 ```r
 library("grid"); packageVersion("grid")
-```
-```
 ## [1] '3.1.1'
 ```
 
 ```r
 library("knitr"); packageVersion("knitr")
-```
-```
 ## [1] '1.11'
 ```
 
 ```r
 library("clustsig"); packageVersion("clustsig")
-```
-```
 ## [1] '1.1'
 ```
 
 ```r
 library('ape'); packageVersion("ape")
-```
-```
 ## [1] '3.2'
 ```
 
 ```r
 library('RColorBrewer'); packageVersion("RColorBrewer")
-```
-```
 ## [1] '1.1.2'
 ```
 
 ```r
 library("dunn.test"); packageVersion("dunn.test")
-```
-```
 ## [1] '1.3.1'
 ```
 
 ```r
 library("DESeq2"); packageVersion("DESeq2")
-```
-```
 ## [1] '1.6.3'
 ```
 
 ```r
 setwd("./data")
 opts_knit$set(root.dir = "./data")
-#opts_chunk$set(tidy.opts=list(width.cutoff=80))
 ```
 
 <br>
