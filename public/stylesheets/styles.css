@@ -14,7 +14,7 @@ body {
     width: 0 !important
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h1bl, h2, h3, h4, h5, h6 {
   color: #EC4E3B;
   margin: 0 0 10px;
   font-family: 'Open Sans', sans-serif;
@@ -31,6 +31,11 @@ h1, h2, h3 {
 
 h1 {
   font-size: 28px;
+}
+
+h1bl {
+  font-size: 18px;
+  color: #49B1F7;
 }
 
 h2 {
