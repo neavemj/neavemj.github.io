@@ -9,6 +9,7 @@ paginate_path: /projects/page:num #makes pagination working
 git: "https://github.com/neavemj"  #your github url here.
 stackoverflow: "" #Add your stackoverflow url here.
 twitter: "https://twitter.com/MatthewNeave"  #Add your twitter url here.
+email: "matthewjneave1@gmail.com"
 
 #disqus comment
 disqus:
