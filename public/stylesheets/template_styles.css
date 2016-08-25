@@ -4,9 +4,9 @@ body {
   padding: 0px 0 20px 0px;
   margin: 0px;
   font: 14px/1.5 'Open Sans', sans-serif;
-  color: #2c3e50 ;
+  color: #A3BFC6 ;
   font-weight: normal;
-  background: #fff;
+  background: #222A30;
    -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -35,7 +35,7 @@ h1 {
 
 h1bl {
   font-size: 18px;
-  color: #3498db;
+  color: #49B1F7;
 }
 
 h2 {
@@ -43,7 +43,7 @@ h2 {
 }
 
 h4, h5, h6 {
-  color: #2c3e50;
+  color: #e8e8e8;
 }
 
 h3 {
@@ -51,11 +51,11 @@ h3 {
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  color: #2c3e50;
+  color: #b6b6b6;
 }
 
 a {
-  color: #3498db;
+  color: #49B1F7;
   font-weight: 400;
   text-decoration: none;
 }
@@ -71,19 +71,19 @@ a:hover, a:active, a:focus, a:visited  {
 
 a small {
   font-size: 11px;
-  color: #2c3e50;
+  color: #666;
   margin-top: -0.6em;
   display: block;
 }
 
 a#git-ic{
   font-size:37px;
-  color:#2c3e50;
+  color:#fff;
 }
 
 a#so-ic{
   font-size:32px;
-  color:#2c3e50;
+  color:#fff;
 }
 
 strong {
@@ -118,7 +118,7 @@ th {
   text-align: left;
   padding: 5px 10px;
   border-bottom: 1px solid #424242;
-  color: #2c3e50;
+  color: #b6b6b6;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
@@ -132,11 +132,11 @@ td {
 hr {
   height: 0;
   border: 0;
-  border-bottom: 1px dashed #3498db;
+  border-bottom: 1px dashed #49B1F7;
 }
 
 dt {
-  color: #2c3e50;
+  color: #F0E7D5;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
@@ -156,7 +156,7 @@ section #title {
 }
 
 section .p-title{
-  color: #3498db;
+  color: #49B1F7;
 }
 
 section #title h1 {
@@ -167,7 +167,7 @@ section #title h1 {
 }
 
 section #title p {
-  color: #2c3e50;
+  color: #B3D1F0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   font-size: 20px;
@@ -178,7 +178,7 @@ section #title .credits {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  color: #2c3e50;
+  color: #696969;
   margin-top: -27px;
 }
 
@@ -212,7 +212,7 @@ footer .right{
   margin: 0 0 10px;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  color: #2c3e50;
+  color: #A3BFC6;
 }
 
 .tags{
