@@ -8,6 +8,7 @@ body {
   font-weight: normal;
   background: #fff;
    -webkit-font-smoothing: subpixel-antialiased;
+  overflow:auto;
 }
 
 ::-webkit-scrollbar {
