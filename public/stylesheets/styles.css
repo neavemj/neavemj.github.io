@@ -91,6 +91,10 @@ a#pdf-pubs{
   color:#EC4E3B;
 }
 
+a#code-link{ 
+  color:#16a085;
+}
+
 strong {
   font-family: 'OpenSansBold', sans-serif;
   font-weight: normal;
