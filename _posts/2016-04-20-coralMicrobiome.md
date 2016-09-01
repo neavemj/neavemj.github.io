@@ -668,7 +668,7 @@ draw_envfit_ord(pverrChem, FCM)
 <br>
 ![plot of chunk unnamed-chunk-11](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/figure/unnamed-chunk-11-6.png?raw=true) 
 
-A few interesting statistically significant correlations between the microbiomes and chemical data were seen, however, no clear pattern emerged.
+A few interesting statistically significant correlations between the microbiomes and chemical data were seen, however, no clear pattern emerged. Note that many of the chemicals were not significantly (p < 0.05) correlated to the microbiome samples.
 
 ### Taxonomic barcharts of bacteria in the corals and seawaters, and core microbiome members
 
