@@ -266,12 +266,13 @@ allAlpha2 <- merge_phyloseq(allAlphaTmp, allAlphaTmp2, allAlphaTmp3)
 allAlphaPlot2 <- plot_richness(allAlpha2, x = "species", measures = c("Chao1", "Simpson", 
     "observed"), color = "site", sortby = "Chao1")
 
-ggplot(data = allAlphaPlot2$data) + geom_point(aes(x = species, y = value, color = site), 
-    position = position_jitter(width = 0.1, height = 0)) + geom_boxplot(aes(x = species, 
-    y = value, color = NULL), alpha = 0.1, outlier.shape = NA) + scale_color_manual(values = cols) + 
-    theme(axis.text.x = element_text(angle = 90)) + facet_wrap(~variable, scales = "free_y") + 
-    scale_x_discrete(limits = c("Stylophora pistillata", "Pocillopora verrucosa", 
-        "seawater"))
+ggplot(data = allAlphaPlot2$data) + 
+    geom_point(aes(x = species, y = value, color = site), 
+    position = position_jitter(width = 0.1, height = 0)) + 
+    geom_boxplot(aes(x = species, y = value, color = NULL), alpha = 0.1, outlier.shape = NA) + scale_color_manual(values = cols) + 
+    theme(axis.text.x = element_text(angle = 90)) + 
+    facet_wrap(~variable, scales = "free_y") + 
+    scale_x_discrete(limits = c("Stylophora pistillata", "Pocillopora verrucosa", "seawater"))
 ```
 
 <br>
