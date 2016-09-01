@@ -11,7 +11,7 @@ During this post I will detail the statistical and graphical steps (using the R 
 
 Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., Voolstra, C.R. (2016). Differential specificity between closely related corals and abundant <i>Endozoicomonas</i> endosymbionts across global scales, published in <i>The ISME Journal</i>. 
 A pdf of this paper and other related code is available under [publications.](../publications)
-The raw sequence data used in this analysis is available here [PRJNA280923.](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA280923/)
+The raw sequence data used in this analysis is available here [PRJNA280923](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA280923/), and complete GitHub repository [here.](https://github.com/neavemj/globalCoralMicrobiomes)
 
 First some background. It is relatively well known that corals have a microbiome containing a large diversity of bacteria. However, it is not clear if certain bacterial species are always present in the microbiome (i.e., core members), of if some bacterial species specifically associate with particular species of coral. Previous work had found that the bacterial genera <i>Endozoicomonas</i> was often present in coral microbiomes, and was considered a potential core microbiome member. These studies, however, often examined corals living on a single reef, or geographically nearby.
 
