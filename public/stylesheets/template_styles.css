@@ -8,7 +8,7 @@ body {
   font-weight: normal;
   background: #222A30;
    -webkit-font-smoothing: subpixel-antialiased;
-  overflow:auto;
+  overflow-y: scroll;
 }
 
 ::-webkit-scrollbar {
