@@ -25,11 +25,11 @@ orig_colors = ["#222A30", "#49B1F7", "#666", "#696969", "#A3BFC6", "#B3D1F0", "#
 lighter_theme = ["#fff", "#3498db", "#2c3e50", "#2c3e50", "#2c3e50", "#2c3e50", "#2c3e50", "#2c3e50", "#EC4E3B", "#2c3e50", "#2c3e50"]
 
 with open(template) as f:
-    for line in f:
-	for index, color in enumerate(orig_colors):
-	    if color in line:
-		line = line.replace(color, lighter_theme[index])
-		break
-	output.write(line)
+	for line in f:
+		for index, color in enumerate(orig_colors):
+			if color in line:
+				line = line.replace(color, lighter_theme[index])
+				break
+		output.write(line)
 
 
