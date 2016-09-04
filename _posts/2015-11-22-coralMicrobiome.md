@@ -143,8 +143,7 @@ allPhyloChem = phyloseq(OTU, TAX, METAchem)
 endoTree = phyloseq(OTUtree, META, TREE)
 
 cols <- c(AmericanSamoa = "#D95F02", Indonesia = "#A6761D", MaggieIs = "#666666", 
-    Maldives = "#E6AB02", Micronesia = "#66A61E", Ningaloo = "#7570B3", RedSea = "#E7298A", 
-    other = "black")
+    Maldives = "#E6AB02", Micronesia = "#66A61E", Ningaloo = "#7570B3", RedSea = "#E7298A", other = "black")
 ```
 
 <br>
