@@ -17,7 +17,7 @@ disqus:
 
 #google analytics
 google:
-    tracking-id: "" #your tracking id here
+        tracking-id: "UA-83581997-1" #your tracking id here
 
 gems:
   - jekyll-sitemap
