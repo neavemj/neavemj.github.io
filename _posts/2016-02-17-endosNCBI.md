@@ -41,9 +41,8 @@ We need to loop through each record and extract the date and sequence length, an
 First we'll loop through each record in "IdList", grab the GenBank record containing that particular Id, then extract the "date" field, and the sequence length.
 
 {% highlight python %}
-# create dictionary to tally results, and count variable
+# create dictionary to tally results
 results_dict = {}
-count = 0
 
 # loop through each record Id
 for study in record["IdList"]:
@@ -51,19 +50,18 @@ for study in record["IdList"]:
     new_handle = Entrez.efetch(db="nucleotide", id=study, rettype="gb",
             retmode="genbank")
     seq_record = SeqIO.read(new_handle, "genbank")
-    # extract the date information from record
+    # extract the date information from the record
     date = seq_record.annotations["date"]
     # only want month and year, not day
     month_year = date[3:]
     # get the length of the sequence
     seq_len = len(seq_record.seq)
-    # if a month_year pair already has data, add new sequence length 
+    # if a month_year pair already has data, add this new sequence length 
     if month_year in results_dict:
         results_dict[month_year] += seq_len
     # or else, create a new month_year record
     else:
         results_dict[month_year] = seq_len
-    count += 1
 {% endhighlight %}
 
 This data can now be written to file for our records.
@@ -105,11 +103,11 @@ Luckily, pandas has a really nice way to add data to missing values in time seri
 We just have to create a new date range that encompasses our data range, then reindex the nucleotide dataframe using the new index and add a 0 for missing data.
 
 {% highlight python %}
-dx = pd.date_range("01.12.2006", "31.12.2015")
+idx = pd.date_range("01.12.2006", "31.12.2015")
 bps_df = bps_df.reindex(idx, fill_value=0)
 {% endhighlight %}
 
-I'd also like to plot the accumulation of bps available on GenBank rather than per month contributions, which is also easy in pandas using the function .cumsum().
+I'd also like to plot the accumulation of bps available on GenBank, rather than per month contributions, which is also easy in pandas using the function .cumsum().
 Once this data is calculated, we'll concatenate the nucleotide data with the publications data, so it's ready for plotting. 
 
 {% highlight python %}
