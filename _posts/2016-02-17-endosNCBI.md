@@ -7,7 +7,7 @@ tags: [bioinformatics, python]
 
 Let's say you're beginning a new project on an organism you haven't worked with before. 
 You might be interested to find out how many studies have previously used this species, and how much of its genetic information is available on NCBI's GenBank.
-You could jump on the NCBI website and do a search for the species and get a pretty rough idea of what's available, but this could quickly become laborious and it would not be easy to quantify.
+You could jump on the NCBI [website](http://blast.ncbi.nlm.nih.gov/Blast.cgi) and do a search for the species and get a pretty rough idea of what's available, but this could quickly become laborious and it would not be easy to quantify.
 
 We wanted to do an analysis like this for the folowing paper: Neave, M.J., Apprill, A., Ferrier-Pages, C., Voolstra, C.R. Diversity and function of prevalent symbiotic marine bacteria in the genus <i>Endozoicomonas</i>, published in <i>Applied Microbiology and Biotechnology.</i>
 A pdf of this paper and other related code is available under [publications.](../publications)
@@ -116,7 +116,7 @@ bps_pubs = pd.concat([bps_df, pubs], axis=1)
 {% endhighlight %}
 
 I'll plot both the cumulative nucleotide data and publication data on the same graph with secondary y-axes. 
-I know some people don't like secondary y-axes but I think in this case it will be ok.
+I know some people don't like secondary y-axes but I think in this case it is justified.
 The nucleotide data will also be log transformed, so that it doesn't drown out earlier, smaller submissions.
 
 {% highlight python %}
