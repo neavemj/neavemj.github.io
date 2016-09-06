@@ -81,7 +81,7 @@ pre code {
 .highlight .m { color: #3677a9 } /* Literal.Number */
 .highlight .s { color: #dc322f } /* Literal.String */
 .highlight .na { color: #bbbbbb } /* Name.Attribute */
-.highlight .nb { color: #b58900 } /* Name.Builtin */
+.highlight .nb { color: #268bd2 } /* Name.Builtin */
 .highlight .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
 .highlight .no { color: #40ffff } /* Name.Constant */
 .highlight .nd { color: #ffa500 } /* Name.Decorator */
