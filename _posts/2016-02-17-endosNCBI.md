@@ -87,7 +87,6 @@ This was obtained by searching on the [Scopus](https://www.scopus.com/) website 
 Note it would probably be better if google scholar had an API that we would use but they haven't got one yet!
 
 {% highlight python %}
-# setting infer_dataframe_format to True for nice plotting later
 bps_df = pd.DataFrame.from_csv("endo_bps.txt", sep="\t", header=None,
         infer_datetime_format=True)
 bps_df.columns = ["bps"]
@@ -95,6 +94,8 @@ bps_df.columns = ["bps"]
 pubs = pd.DataFrame.from_csv("endo_scopus.txt", sep="\t", header=None)
 pubs.columns = ["papers"]
 {% endhighlight %}
+
+Note that I set infer_datatime_format to True, so that our month_year field is correctly interpreted by pandas. This will allow us to plot the time series data easily.
 
 We now have a dataframe containing the amount of nucleotide information deposited for <i>Endozoicomonas</i> for each month and year that a record was created. 
 This is a problem because we'd like to plot the data on a nice linear chronological scale, and gaps in month_years (because no-one deposited any data) would mess this up.
@@ -131,6 +132,6 @@ plt.show()
 ![endo_ncbi](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/endo_review/endo_data_raw.png/?raw=true)
 
 This plot can now be edited in [Inkscape](//inkscape.org) or similar for touch ups.
-I usually like a fairly minimalist plot that highlights the data and hides axes, etc., which you can see in the final verion.
+I usually like a fairly minimalist plot that highlights the data and hides axes, etc., which you can see from the final verion.
 
 
