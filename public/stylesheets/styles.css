@@ -101,6 +101,11 @@ a#code-link{
   color:#EC4E3B;
 }
 
+p#year{ 
+  font-style: italic;
+  font-size: 14px;
+}
+
 strong {
   font-family: 'OpenSansBold', sans-serif;
   font-weight: normal;
