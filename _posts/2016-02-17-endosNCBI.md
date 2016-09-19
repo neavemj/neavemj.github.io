@@ -122,8 +122,8 @@ The nucleotide data will also be log transformed, so that it doesn't drown out e
 
 {% highlight python %}
 ax1 = bps_pubs["cumulative"].plot(logy=True, color="#2c7fb8")
-ax2 = bps_pubs["papers"].plot(logy=False, color="#f03b20", marker="o", lw=0, 
-	secondary_y=True)
+ax2 = bps_pubs["papers"].plot(logy=False, color="#f03b20", marker="o", 
+	lw=0, secondary_y=True)
 ax1.set_ylim(0, 100000000)
 
 plt.show()
