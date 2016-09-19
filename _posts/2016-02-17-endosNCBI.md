@@ -132,6 +132,7 @@ plt.show()
 ![endo_ncbi](https://github.com/neavemj/neavemj.github.io/blob/master/_posts/endo_review/endo_data_raw.png/?raw=true)
 
 This plot can now be edited in [Inkscape](//inkscape.org) or similar for touch ups.
-I usually like a fairly minimalist plot that highlights the data and hides axes, etc., which you can see from the final verion.
+I usually like a fairly minimalist plot that highlights the data and hides axes, etc., which you can see from the final version.
 
+<br>
 
