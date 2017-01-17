@@ -1,4 +1,4 @@
----
+--
 title: "Analysing the Microbiome of Corals"
 author: "Matthew J. Neave"
 date: "November 22, 2015"
@@ -9,7 +9,7 @@ tags: [bioinformatics, R]
 
 During this post I will detail the statistical and graphical steps (using the R programming language) for reproducing the results in:
 
-Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., Voolstra, C.R. (2016). Differential specificity between closely related corals and abundant <i>Endozoicomonas</i> endosymbionts across global scales, published in <i>The ISME Journal</i>. 
+Neave, M.J., Rachmawati, R., Xun, L., Michell, C.T., Bourne, D.G., Apprill, A., Voolstra, C.R. (2017). Differential specificity between closely related corals and abundant <i>Endozoicomonas</i> endosymbionts across global scales, published in <i>The ISME Journal</i>. 
 A pdf of this paper and other related code is available under [publications.](../publications)
 The raw sequence data used in this analysis is available here [PRJNA280923](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA280923/), and complete GitHub repository [here.](https://github.com/neavemj/globalCoralMicrobiomes)
 
