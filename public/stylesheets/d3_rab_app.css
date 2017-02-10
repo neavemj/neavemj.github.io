@@ -3,3 +3,44 @@
 .bar { 
     fill: steelblue; 
     }
+
+h1, h1bl, h2, h3, h4, h5, h6 {
+  color: #EC4E3B;
+  margin: 0 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+
+a {
+  color: #3498db;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EC4E3B;
+}
+
+a:hover, a:active, a:focus, a:visited  {
+  text-decoration: none;
+  outline: 0;
+}
+
+hr {
+    margin-bottom: 27px;
+    margin-top: 27px;
+    border: 0;
+    border-top: 0px;
+    border-bottom: 1.5px dashed #3498db;
+}
+
+
