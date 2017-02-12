@@ -1,0 +1,280 @@
+/* main */
+
+body {
+  padding: 0px 0 0px 0px;
+  margin: 0px;
+  font: 15px/1.5 'Open Sans', sans-serif;
+  line-height: 1.5
+  color: #2c3e50 ;
+  font-weight: normal;
+  background: #fff;
+   -webkit-font-smoothing: subpixel-antialiased;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0 !important
+}
+
+h1, h1bl, h2, h3, h4, h5, h6 {
+  color: #EC4E3B;
+  margin: 0 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+p, ul, ol, table, pre, dl {
+  margin: 0 0 0px;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h1bl {
+  font-size: 18px;
+  color: #3498db;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h4, h5, h6 {
+  color: #2c3e50;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #2c3e50;
+}
+
+a {
+  color: #3498db;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EC4E3B;
+}
+
+a:hover, a:active, a:focus, a:visited  {
+  text-decoration: none;
+  outline: 0;
+}
+
+a small {
+  font-size: 11px;
+  color: #2c3e50;
+  margin-top: -0.6em;
+  display: block;
+}
+
+a#git-ic{
+  font-size:37px;
+  color:#2c3e50;
+}
+
+a#git-inline{
+  font-size:12px;
+  color:#2c3e50;
+}
+
+a#so-ic{
+  font-size:32px;
+  color:#2c3e50;
+}
+
+a#pdf-pubs{ 
+  color:#EC4E3B;
+}
+
+a#code-link{ 
+  color:#EC4E3B;
+}
+
+p#year{ 
+  font-style: italic;
+  font-size: 14px;
+}
+
+strong {
+  font-family: 'OpenSansBold', sans-serif;
+  font-weight: normal;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 0px;
+}
+
+section img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 3px solid #ffcc00;
+  margin: 0 1 auto;
+  padding: 0 0 0 20px;
+  font-style: italic;
+}
+
+table.tableSection {
+    display: table;
+    width: 100%;
+}
+table.tableSection thead, table.tableSection tbody {
+    float: left;
+    width: 100%;
+}
+table.tableSection tbody {
+    overflow: auto;
+    height: 150px;
+}
+table.tableSection tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table.tableSection th, table.tableSection td {
+    width: 33%;
+}
+
+hr {
+  height: 0;
+  border: 0;
+  border-bottom: 1.5px dashed #3498db;
+}
+
+dt {
+  color: #2c3e50;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+section {
+  max-width: 1000px;/*  //750*/
+  padding: 0px 0px 50px 0px;
+  margin: 20px 0;
+  margin-top: 30px;
+}
+
+section #title {
+  border: 0;
+  outline: none;
+  margin: 0 0 20px 0;
+  padding: 0 0 5px 0;
+}
+
+section .p-title{
+  color: #3498db;
+}
+
+section #title h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 38px;
+  text-align: center;
+}
+
+section #title p {
+  color: #2c3e50;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+}
+
+section #title .credits {
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #2c3e50;
+  margin-top: -27px;
+}
+
+section #title .credits.left {
+  float: left;
+}
+
+section #title .credits.right {
+  float: right;
+}
+
+.section-header-archive, .tag_name{
+	margin:  15px 0 0 0;
+}
+
+footer .left{
+  float: left;
+}
+
+footer .right{
+  float: right;
+}
+
+.paginate{
+  margin-bottom: 15px;
+}
+
+.resume p{
+  mfont-size: 15px;
+  line-height: 24px;
+  margin: 0 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: #2c3e50;
+}
+
+.tags{
+ font-size: 13px;
+}
+
+.tags a {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+
+/* just change the class on /index.html pln-img or circular
+
+/* for not circled image */
+.pln-img {
+  width: 300px;
+  height: 300px;
+	margin-bottom: 10px;
+	margin-top: -20px;
+}
+
+/* for circled image*/
+.circular {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  margin-bottom: 15px;
+}
+
+#title #sitename,
+.resume span,
+.resume h2 {
+  color: #EC4E3B;
+}
+
+#sitename{
+  font-weight: 300;
+}
+
+mark, .mark {
+  opacity: 0.9;
+}
