@@ -60,9 +60,9 @@ table.tableSection tbody {
 table.tableSection tr {
     width: 0%;
     display: table;
-    text-align: left;
 }
 table.tableSection th, table.tableSection td {
     width: 180px;
     text-align: left;
+    vertical-align: top;
 }
