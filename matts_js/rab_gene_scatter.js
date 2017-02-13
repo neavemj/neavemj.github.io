@@ -1,9 +1,10 @@
+
 var g_data;
 var visible_column;
 
 var margin = {top: 20, right: 20, bottom: 100, left: 80},
-    width = 600 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+    width = 500 - margin.left - margin.right,
+    height = 350 - margin.top - margin.bottom;
 
 var xValue = function(d) { return d.gene;};
 var x = d3.scalePoint().range([20, width-20])
@@ -15,16 +16,13 @@ var yAxis = d3.axisLeft()
         .scale(y)
         .ticks(10);
 
-// setup fill color
-//var cValue = function(d) { return d.sample;};
-//    color = d3.scaleLinear.category10();
-
-var svg = d3.select("div#rab-data").append("svg")
+var svg = d3.select("div#rab_gene_scatter").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
        .append("g")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
+
 
 // read in data
 
@@ -66,7 +64,6 @@ d3.tsv("../rabA130_K1.txt", function(data) {
     visible_column = "d.count";
 });
 
-
 function updateData() {
     y.domain([0, d3.max(g_data, function(d) { return d.linear; })]);
 
@@ -84,7 +81,6 @@ function updateData() {
             .duration(1000)
             .call(yAxis);
 }
-
 
 d3.select("#data_type").on("change", function(){
                 updateData_toggle(this.value);
@@ -127,4 +123,5 @@ function updateData_toggle(value) {
 
     }
 }
+
 

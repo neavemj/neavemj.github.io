@@ -46,11 +46,11 @@ hr {
 
 table.tableSection {
     display: table;
-    width: 100%;
+    width: 500px;
 }
 table.tableSection thead, table.tableSection tbody {
     float: left;
-    width: 100%;
+    width: 97%;
 }
 table.tableSection tbody {
     overflow: auto;
@@ -58,11 +58,21 @@ table.tableSection tbody {
     font-size: 12px;
 }
 table.tableSection tr {
-    width: 0%;
+    width: 100%;
     display: table;
 }
 table.tableSection th, table.tableSection td {
-    width: 180px;
+    width: 50%;
     text-align: left;
     vertical-align: top;
 }
+
+.dataTables_wrapper {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+label {
+    font-weight: normal;
+}
+

@@ -1,6 +1,6 @@
 var tabulate = function (data,columns) {
   var table = d3.select('div#rab-table').append('table')
-          .attr("class", "tableSection")
+          .attr("class", "table display tableSection table-striped")
         var thead = table.append('thead')
         var tbody = table.append('tbody')
 
