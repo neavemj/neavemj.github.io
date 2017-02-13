@@ -28,8 +28,7 @@ var tabulate = function (data,columns) {
   return table;
 }
 
-d3.csv('../morley.csv',function (data) {
-        var columns = ['Expt','Run','Speed']
-  tabulate(data,columns)
+d3.tsv('/matts_data/rab_gene_annots.tsv',function (data) {
+        var columns = ["Gene ID", "Description"]
+        tabulate(data,columns)
 })
-
