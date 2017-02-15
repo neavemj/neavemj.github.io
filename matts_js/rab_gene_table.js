@@ -1,6 +1,7 @@
 var tabulate = function (data,columns) {
   var table = d3.select('div#rab-table').append('table')
           .attr("class", "table display tableSection")
+          .attr("id", "rab-table-body")
         var thead = table.append('thead')
         var tbody = table.append('tbody')
 
@@ -28,7 +29,7 @@ var tabulate = function (data,columns) {
   return table;
 }
 
-d3.tsv('/matts_data/rab_gene_annots.tsv',function (data) {
+d3.tsv('/matts_data/rab_gene_annots_100.tsv',function (data) {
         var columns = ["Gene ID", "Description"]
         tabulate(data,columns)
 })
