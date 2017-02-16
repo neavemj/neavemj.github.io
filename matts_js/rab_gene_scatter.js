@@ -27,18 +27,17 @@ var svg = d3.select("div#rab_gene_scatter").append("svg")
 
 // read in data
 
-d3.tsv("../rabA130_K1.txt", function(data) {
+     
+d3.tsv("/matts_data/melted.edgeR_counts.design.head", function(data) {
 
         data.forEach(function(d) {
-        d.count = +d.count;
-        d.linear = +d.linear;
-        console.log(d);
+        d.cpm = +d.cpm;
         });
 
     g_data = data;
 
-    x.domain(data.map(function(d) { return d.gene; }));
-    y.domain([0, d3.max(data, function(d) { return d.count; })]);
+    x.domain(data.map(function(d) { return d.condition; }));
+    y.domain([0, d3.max(data, function(d) { return d.cpm; })]);
 
     svg.append("g")
         .attr("class", "x_axis")
@@ -57,16 +56,21 @@ d3.tsv("../rabA130_K1.txt", function(data) {
     svg.selectAll("matts_bar")
         .data(data)
       .enter().append("circle")
+      .filter(function(d) { return d.gene == "ENSOCUG00000000006"})
       .style("fill", function(d) { return d.color; })
         .attr("class", "matts_bar")
-        .attr("cx", function(d) { return x(d.gene); })
-        .attr("cy", function(d) { return y(d.count); })
+        .attr("cx", function(d) { return x(d.condition); })
+        .attr("cy", function(d) { return y(d.cpm); })
         .attr("r", 2.5);
     visible_column = "d.count";
 });
 
-function updateData() {
-    y.domain([0, d3.max(g_data, function(d) { return d.linear; })]);
+
+$('#rab-table-body tbody').on('click', 'tr', function(){
+    console.log("from scatter js")
+    var selected_gene = $(this).closest('tr').children('td.sorting_1').text();
+    console.log(selected_gene)
+    y.domain([0, d3.max(g_data, function(d) { return d.cpm; })]);
 
     // Select what we want to change
     var svg = d3.select("div#rab-data");
@@ -74,14 +78,42 @@ function updateData() {
     // Make the changes
     svg.selectAll(".matts_bar")
             .data(g_data)
+            .enter()
+            .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
             .transition()
             .duration(1000)
-            .attr("cy", function(d) {return y(d.linear); });
+            .attr("cy", function(d) {return y(d.cpm); });
     svg.select(".y_axis")
             .transition()
             .duration(1000)
             .call(yAxis);
+});
+
+function update_plot(){
+    
+    console.log("from plot scatter js")
+    var selected_gene = $(this).closest('tr').children('td.sorting_1').text();
+    console.log(selected_gene)
+    y.domain([0, d3.max(g_data, function(d) { return d.cpm; })]);
+
+    // Select what we want to change
+    var svg = d3.select("div#rab-data");
+
+    // Make the changes
+    svg.selectAll("matts_bar")
+            .data(g_data)
+            .enter()
+            .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
+            .transition()
+            .duration(1000)
+            .attr("cy", function(d) {return y(d.cpm); });
+    svg.select(".y_axis")
+            .transition()
+            .duration(1000)
+            .call(yAxis);
+    
 }
+
 
 d3.select("#data_type").on("change", function(){
                 updateData_toggle(this.value);

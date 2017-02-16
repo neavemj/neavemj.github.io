@@ -5,18 +5,32 @@ layout: d3_rab_app
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard Starter UI, by Keen IO</title>
+  <title>Rabbit Transcriptomics, by Matthew J Neave</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-  <script type="text/javascript" src="{{ "/public/javascripts/jquery.min.js" | prepend:site.baseurl }}"></script>
-  <script src="{{ "/public/javascripts/bootstrap.min.js" | prepend:site.baseurl }}"></script>
- <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
- <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  
   <link rel="stylesheet" type="text/css" href="../../assets/css/keen-dashboards.css" />
-  <link rel="stylesheet" href="{{"/public/stylesheets/d3_rab_app.css" | prepend:site.baseurl }}">
+  
+
+  
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+   
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+   
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+   
+   <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
+   
+   <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/jquery.dataTables.min.js"></script>
+
+     <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+      <link rel="stylesheet" href="{{"/public/stylesheets/d3_rab_app.css" | prepend:site.baseurl }}">
+     
+     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+     
 </head>
 
- <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+
 
 
 <body class="application">
@@ -75,6 +89,7 @@ layout: d3_rab_app
  
 	$('#rab-table-body tbody').on( 'click', 'tr', function () {
 		var gene_name = $(this).closest('tr').children('td.sorting_1').text();
+        update_plot();
 		if ( $(this).hasClass('selected') ) {
 		    $(this).removeClass('selected');
 		}
@@ -186,7 +201,6 @@ layout: d3_rab_app
     <a href="https://keen.io">Keen IO</a>
   </div>
     
-  </div>
 
   <script type="text/javascript" src="../../assets/lib/holderjs/holder.js"></script>
   <script>
@@ -195,6 +209,7 @@ layout: d3_rab_app
 
   <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script>
   <script type="text/javascript" src="../../assets/js/meta.js"></script>
+  <script src="{{ "/public/javascripts/bootstrap.min.js" | prepend:site.baseurl }}"></script>
 
 </body>
 </html>
