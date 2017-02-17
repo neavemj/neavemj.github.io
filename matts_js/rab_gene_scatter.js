@@ -1,9 +1,8 @@
 
 
 var g_data;
-var visible_column;
 
-var margin = {top: 20, right: 20, bottom: 100, left: 80},
+var margin = {top: 20, right: 20, bottom: 40, left: 30},
     width = 500 - margin.left - margin.right,
     height = 350 - margin.top - margin.bottom;
 
@@ -24,18 +23,17 @@ var svg = d3.select("div#rab_gene_scatter").append("svg")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
-
+            
 // read in data
-
      
 d3.tsv("/matts_data/melted.edgeR_counts.design.head", function(data) {
-
+    
         data.forEach(function(d) {
         d.cpm = +d.cpm;
         });
-
+        
+    
     g_data = data;
-
     x.domain(data.map(function(d) { return d.condition; }));
     y.domain([0, d3.max(data, function(d) { return d.cpm; })]);
 
@@ -43,118 +41,52 @@ d3.tsv("/matts_data/melted.edgeR_counts.design.head", function(data) {
         .attr("class", "x_axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis)
-      .selectAll("text")
-        .attr("y", 0)
-        .attr("x", -9)
-        .attr("transform", "rotate(-45)")
-        .style("text-anchor", "end");
+      //.selectAll("text")
+     //   .attr("y", 0)
+      //  .attr("x", -9);
+        //.attr("transform", "rotate(-45)")
+        //.style("text-anchor", "end");
 
     svg.append("g")
         .attr("class", "y_axis")
         .call(yAxis);
 
     svg.selectAll("matts_bar")
-        .data(data)
-      .enter().append("circle")
-      .filter(function(d) { return d.gene == "ENSOCUG00000000006"})
-      .style("fill", function(d) { return d.color; })
+        .data(data).enter()
+        .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
+        .append("circle")
+        .style("fill", function(d) { 
+            if (d.age == "kitten") {
+                return "steelblue";
+            } else {
+                return "red";
+        }})
         .attr("class", "matts_bar")
         .attr("cx", function(d) { return x(d.condition); })
         .attr("cy", function(d) { return y(d.cpm); })
-        .attr("r", 2.5);
-    visible_column = "d.count";
+        .attr("r", 5);
 });
 
+function update_plot(gene_name){
 
-$('#rab-table-body tbody').on('click', 'tr', function(){
-    console.log("from scatter js")
-    var selected_gene = $(this).closest('tr').children('td.sorting_1').text();
-    console.log(selected_gene)
-    y.domain([0, d3.max(g_data, function(d) { return d.cpm; })]);
-
+    var filt_data = g_data.filter(function(d) { return d.gene == gene_name});
+    
+    y.domain([0, d3.max(filt_data, function(d) { return d.cpm; })]);
+       
     // Select what we want to change
-    var svg = d3.select("div#rab-data");
+    var svg = d3.select("div#rab_gene_scatter");
 
     // Make the changes
     svg.selectAll(".matts_bar")
-            .data(g_data)
-            .enter()
-            .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
-            .transition()
-            .duration(1000)
-            .attr("cy", function(d) {return y(d.cpm); });
+            .data(filt_data)
+                .transition()
+                .duration(1000)
+                .attr("cy", function(d) { return y(d.cpm); });
     svg.select(".y_axis")
             .transition()
             .duration(1000)
             .call(yAxis);
-});
-
-function update_plot(){
-    
-    console.log("from plot scatter js")
-    var selected_gene = $(this).closest('tr').children('td.sorting_1').text();
-    console.log(selected_gene)
-    y.domain([0, d3.max(g_data, function(d) { return d.cpm; })]);
-
-    // Select what we want to change
-    var svg = d3.select("div#rab-data");
-
-    // Make the changes
-    svg.selectAll("matts_bar")
-            .data(g_data)
-            .enter()
-            .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
-            .transition()
-            .duration(1000)
-            .attr("cy", function(d) {return y(d.cpm); });
-    svg.select(".y_axis")
-            .transition()
-            .duration(1000)
-            .call(yAxis);
-    
 }
 
-
-d3.select("#data_type").on("change", function(){
-                updateData_toggle(this.value);
-                });
-
-function updateData_toggle(value) {
-
-    // Select what we want to change
-    var svg = d3.select("div#rab-data");
-
-    // Make the changes depending on the selection
-    // have to call y.domain before changing attributes
-    // think because y(d.count) relies on correct domain
-
-    if(value=="count"){
-    y.domain([0, d3.max(g_data, function(d) { return d.count; })]);
-    svg.selectAll(".matts_bar")
-            .data(g_data)
-            .transition()
-            .duration(1000)
-            .attr("cy", function(d) {return y(d.count); });
-
-    svg.select(".y_axis")
-            .transition()
-            .duration(1000)
-            .call(yAxis);
-
-    } else if (value=="linear") {
-    y.domain([0, d3.max(g_data, function(d) { return d.linear; })]);
-    svg.selectAll(".matts_bar")
-            .data(g_data)
-            .transition()
-            .duration(1000)
-            .attr("cy", function(d) {return y(d.linear); });
-
-    svg.select(".y_axis")
-            .transition()
-            .duration(1000)
-            .call(yAxis);
-
-    }
-}
 
 
