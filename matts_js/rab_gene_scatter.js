@@ -2,9 +2,9 @@
 
 var g_data;
 
-var margin = {top: 20, right: 20, bottom: 40, left: 30},
-    width = 500 - margin.left - margin.right,
-    height = 350 - margin.top - margin.bottom;
+var margin = {top: 20, right: 20, bottom: 40, left: 40},
+    width = 450 - margin.left - margin.right,
+    height = 471 - margin.top - margin.bottom;
 
 var xValue = function(d) { return d.gene;};
 var x = d3.scalePoint().range([20, width-20])
@@ -26,7 +26,7 @@ var svg = d3.select("div#rab_gene_scatter").append("svg")
             
 // read in data
      
-d3.tsv("/matts_data/melted.edgeR_counts.design.head", function(data) {
+d3.tsv("/matts_data/control_adVskit.edgeR_counts.tsv", function(data) {
     
         data.forEach(function(d) {
         d.cpm = +d.cpm;

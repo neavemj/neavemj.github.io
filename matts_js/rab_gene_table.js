@@ -29,7 +29,7 @@ var tabulate = function (data,columns) {
   return table;
 }
 
-d3.tsv('/matts_data/rab_gene_annots_100.tsv',function (data) {
-        var columns = ["Gene ID", "Description"]
+d3.tsv('/matts_data/control_adVskit.txt',function (data) {
+        var columns = ["ensembl_gene_id", "description", "logFC", "FDR"]
         tabulate(data,columns)
 })
