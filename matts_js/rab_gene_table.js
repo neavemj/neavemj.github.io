@@ -26,10 +26,26 @@ var tabulate = function (data,columns) {
       .enter()
     .append('td')
       .text(function (d) { return d.value })
+  initialize_dataTable();
   return table;
-}
+  
+};
 
-d3.tsv('/matts_data/control_adVskit.txt',function (data) {
-        var columns = ["ensembl_gene_id", "description", "logFC", "FDR"]
-        tabulate(data,columns)
-})
+var initialize_dataTable = function(){
+	var d_table = $('#rab-table-body').DataTable( {			
+	"scrollY": "350px",
+	"scrollCollapse": false			
+	});
+ 
+$('#rab-table-body tbody').on( 'click', 'tr', function () {
+	var gene_name = $(this).closest('tr').children().first().text();
+    update_plot(gene_name);
+	if ( $(this).hasClass('selected') ) {
+		    $(this).removeClass('selected');
+		}
+	else {
+		    d_table.$('tr.selected').removeClass('selected');
+		    $(this).addClass('selected');
+	}		
+	});
+};

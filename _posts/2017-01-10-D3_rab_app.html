@@ -65,37 +65,45 @@ layout: d3_rab_app
             Differentially expressed genes in:
 
 		  <select id = "opts">
-		  <option value="Advskit">ADULTS vs KITTENS</option>
-		  <option value="R1vsR2">RHDV-1 vs RHDV-2</option>
+		  <option value="control_adVskit">ADULTS compared to KITTENS</option>
+		  <option value="R1_12h_ad">ADULTS with RHDV-1 after 12 HOURS</option>
+		  <option value="R1_24h_ad">ADULTS with RHDV-1 after 24 HOURS</option>
+		  <option value="R1_12h_kit">KITTENS with RHDV-1 after 12 HOURS</option>
+		  <option value="R1_24h_kit">KITTENS with RHDV-1 after 24 HOURS</option>
+		  <option value="R2_12h_kit">KITTENS with RHDV-2 after 12 HOURS</option>
+		  <option value="R2_24h_kit">KITTENS with RHDV-2 after 24 HOURS</option>
 		  </select>
 	  
           </div>
 		  <br>
           <div class="chart-stage" id="rab-table">
-          
+			
             <script src="/matts_js/rab_gene_table.js" type="text/javascript"></script>
-            
-	    <script>    
-	$(document).ready(function() {
-	     	var table = $('#rab-table-body').DataTable( {
-			
-			"scrollY": "350px",
-			"scrollCollapse": true
-			
-			});
- 
-	$('#rab-table-body tbody').on( 'click', 'tr', function () {
-		var gene_name = $(this).closest('tr').children().first().text();
-        update_plot(gene_name);
-		if ( $(this).hasClass('selected') ) {
-		    $(this).removeClass('selected');
-		}
-		else {
-		    table.$('tr.selected').removeClass('selected');
-		    $(this).addClass('selected');
-		}		
-		} );
-		} );
+			<script>         
+			var drop_menu = document.getElementById("opts");
+			var selected = drop_menu.options[drop_menu.selectedIndex].value;
+			var selected_file = "/matts_data/" + selected + ".txt";
+
+		$("#opts").change(function(event) {
+			$("div#rab-table").html("");
+		
+			var drop_menu = document.getElementById("opts");
+			var selected = drop_menu.options[drop_menu.selectedIndex].value;
+			var selected_file = "/matts_data/" + selected + ".txt";
+
+			d3.tsv(selected_file ,function (data) {
+				var columns = ["ensembl_gene_id", "description", "logFC", "FDR"];
+				tabulate(data,columns);		
+				});	
+		});
+				
+	$(window).load(function() {
+	     		d3.tsv(selected_file ,function (data) {
+				var columns = ["ensembl_gene_id", "description", "logFC", "FDR"]
+				tabulate(data,columns)
+		})
+		});
+		
 	    </script>
 
           </div>
@@ -110,6 +118,7 @@ layout: d3_rab_app
           <div class="chart-title">
             Expression scatter plot
           </div>
+	  <br>
 	  <div class="chart-stage" id="rab_gene_scatter">
 	      
 		  <script src="/matts_js/rab_gene_scatter.js" type="text/javascript"></script>
