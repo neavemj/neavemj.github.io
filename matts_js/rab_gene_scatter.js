@@ -29,16 +29,16 @@ var svg = d3.select("div#rab_gene_scatter").append("svg")
        
 // read in data
      
-d3.tsv("/matts_data/sig_genes.edgeR_counts.tsv", function(data) {
+d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
     
         data.forEach(function(d) {
-        d.cpm = +d.cpm;
+        d.rpkm = +d.rpkm;
         });
         
     
     g_data = data;
 	x.domain(["control","RHDV-1_12","RHDV-1_24","RHDV-2_12","RHDV-2_24"]);
-    y.domain([0, d3.max(data, function(d) { return d.cpm; })]);
+    y.domain([0, d3.max(data, function(d) { return d.rpkm; })]);
 
 // add the x axis
     svg.append("g")
@@ -65,7 +65,7 @@ d3.tsv("/matts_data/sig_genes.edgeR_counts.tsv", function(data) {
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Counts per Million (cpm)");  
+        .text("Reads per Kilobase per Million (rpkm)");  
 
 // now add the scatter points
     svg.selectAll("matts_bar")
@@ -80,7 +80,7 @@ d3.tsv("/matts_data/sig_genes.edgeR_counts.tsv", function(data) {
         }})
         .attr("class", "matts_bar")
         .attr("cx", function(d) { return x(d.condition); })
-        .attr("cy", function(d) { return y(d.cpm); })
+        .attr("cy", function(d) { return y(d.rpkm); })
         .attr("r", 5)
 		.on("mouseover", function(d) {
 			d3.select(this).classed("hover", true);
@@ -132,7 +132,7 @@ function update_plot(gene_name){
 
     var filt_data = g_data.filter(function(d) { return d.gene == gene_name});
     
-    y.domain([0, d3.max(filt_data, function(d) { return d.cpm; })]);
+    y.domain([0, d3.max(filt_data, function(d) { return d.rpkm; })]);
        
     // Select what we want to change
     var svg = d3.select("div#rab_gene_scatter");
@@ -142,7 +142,7 @@ function update_plot(gene_name){
             .data(filt_data)
                 .transition()
                 .duration(1000)
-                .attr("cy", function(d) { return y(d.cpm); });
+                .attr("cy", function(d) { return y(d.rpkm); });
     svg.select(".y_axis")
             .transition()
             .duration(1000)
