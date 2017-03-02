@@ -1,0 +1,182 @@
+Pathway	Name	N	Up	Down	P.Up	P.Down
+path:ocu01100	Metabolic pathways	939	88	39	1.18E-54	3.26E-10
+path:ocu04110	Cell cycle	90	0	32	1	2.13E-37
+path:ocu00071	Fatty acid degradation	35	16	0	5.12E-22	1
+path:ocu03030	DNA replication	23	0	12	1	3.22E-17
+path:ocu04114	Oocyte meiosis	75	3	17	0.064743205	1.34E-16
+path:ocu03320	PPAR signaling pathway	53	14	3	1.85E-15	0.034473639
+path:ocu04146	Peroxisome	60	13	1	3.15E-13	0.557096813
+path:ocu04151	PI3K-Akt signaling pathway	221	4	20	0.287726193	2.10E-11
+path:ocu01212	Fatty acid metabolism	44	10	3	1.09E-10	0.02127233
+path:ocu05206	MicroRNAs in cancer	106	3	14	0.141578907	1.56E-10
+path:ocu00830	Retinol metabolism	62	11	3	2.19E-10	0.051021698
+path:ocu00120	Primary bile acid biosynthesis	15	7	0	2.26E-10	1
+path:ocu05166	HTLV-I infection	182	5	17	0.073963419	4.31E-10
+path:ocu01200	Carbon metabolism	86	12	2	5.99E-10	0.322495721
+path:ocu03460	Fanconi anemia pathway	38	0	9	1	1.46E-09
+path:ocu04974	Protein digestion and absorption	72	1	11	0.58962902	3.09E-09
+path:ocu00140	Steroid hormone biosynthesis	62	10	4	3.91E-09	0.009710236
+path:ocu04914	Progesterone-mediated oocyte maturation	57	4	10	0.005245855	4.04E-09
+path:ocu03440	Homologous recombination	31	0	8	1	5.81E-09
+path:ocu04142	Lysosome	88	11	0	1.04E-08	1
+path:ocu04115	p53 signaling pathway	49	0	9	1	1.61E-08
+path:ocu05222	Small cell lung cancer	67	0	10	1	2.06E-08
+path:ocu04213	Longevity regulating pathway - multiple species	42	8	2	3.75E-08	0.109500182
+path:ocu05200	Pathways in cancer	282	7	18	0.059652012	5.53E-08
+path:ocu04978	Mineral absorption	30	1	7	0.309747453	1.15E-07
+path:ocu00380	Tryptophan metabolism	33	7	1	1.24E-07	0.360834953
+path:ocu05146	Amoebiasis	63	1	9	0.541211368	1.58E-07
+path:ocu01522	Endocrine resistance	63	6	9	0.000121127	1.58E-07
+path:ocu04913	Ovarian steroidogenesis	35	7	4	1.92E-07	0.00120861
+path:ocu00590	Arachidonic acid metabolism	71	9	5	2.07E-07	0.002683188
+path:ocu05161	Hepatitis B	113	1	11	0.753269932	3.66E-07
+path:ocu05204	Chemical carcinogenesis	80	9	4	5.86E-07	0.02285433
+path:ocu00670	One carbon pool by folate	14	2	5	0.012379391	7.70E-07
+path:ocu05203	Viral carcinogenesis	148	3	12	0.273169764	7.86E-07
+path:ocu04530	Tight junction	124	3	11	0.195420002	9.34E-07
+path:ocu03430	Mismatch repair	15	0	5	1	1.14E-06
+path:ocu04270	Vascular smooth muscle contraction	82	8	9	7.42E-06	1.56E-06
+path:ocu05215	Prostate cancer	62	4	8	0.007065196	1.74E-06
+path:ocu04976	Bile secretion	48	7	4	1.83E-06	0.003919027
+path:ocu01230	Biosynthesis of amino acids	49	7	3	2.12E-06	0.028186046
+path:ocu04144	Endocytosis	180	12	2	2.36E-06	0.700053919
+path:ocu05205	Proteoglycans in cancer	139	5	11	0.028527104	2.89E-06
+path:ocu04918	Thyroid hormone synthesis	49	3	7	0.022205636	3.90E-06
+path:ocu00220	Arginine biosynthesis	10	4	1	4.38E-06	0.126763772
+path:ocu04512	ECM-receptor interaction	51	0	7	1	5.14E-06
+path:ocu00240	Pyrimidine metabolism	72	3	8	0.058700407	5.48E-06
+path:ocu00350	Tyrosine metabolism	22	5	0	5.91E-06	1
+path:ocu00983	Drug metabolism - other enzymes	39	6	2	7.43E-06	0.096690055
+path:ocu00982	Drug metabolism - cytochrome P450	59	7	3	7.58E-06	0.045143367
+path:ocu04925	Aldosterone synthesis and secretion	43	6	3	1.33E-05	0.020016333
+path:ocu04540	Gap junction	59	4	7	0.005930558	1.38E-05
+path:ocu01040	Biosynthesis of unsaturated fatty acids	27	5	3	1.72E-05	0.005551108
+path:ocu04724	Glutamatergic synapse	67	7	3	1.78E-05	0.061595557
+path:ocu00980	Metabolism of xenobiotics by cytochrome P450	68	7	4	1.96E-05	0.013320476
+path:ocu04915	Estrogen signaling pathway	69	7	6	2.16E-05	0.00033043
+path:ocu04612	Antigen processing and presentation	48	6	1	2.55E-05	0.478637666
+path:ocu00230	Purine metabolism	127	9	6	2.72E-05	0.007484959
+path:ocu05219	Bladder cancer	28	3	5	0.004763308	3.24E-05
+path:ocu00260	"Glycine, serine and threonine metabolism"	31	5	2	3.49E-05	0.065005933
+path:ocu04141	Protein processing in endoplasmic reticulum	102	8	2	3.70E-05	0.400015008
+path:ocu04933	AGE-RAGE signaling pathway in diabetic complications	69	1	7	0.574083347	3.90E-05
+path:ocu05224	Breast cancer	94	5	8	0.00603632	3.95E-05
+path:ocu04920	Adipocytokine signaling pathway	53	6	1	4.53E-05	0.512883952
+path:ocu04962	Vasopressin-regulated water reabsorption	31	2	5	0.055233411	5.42E-05
+path:ocu00270	Cysteine and methionine metabolism	34	5	0	5.54E-05	1
+path:ocu00600	Sphingolipid metabolism	36	5	0	7.36E-05	1
+path:ocu00330	Arginine and proline metabolism	33	4	5	0.000683294	7.40E-05
+path:ocu00860	Porphyrin and chlorophyll metabolism	38	5	2	9.61E-05	0.092522054
+path:ocu04068	FoxO signaling pathway	95	7	5	0.000168952	0.009215396
+path:ocu04072	Phospholipase D signaling pathway	96	7	1	0.000180366	0.728645222
+path:ocu04211	Longevity regulating pathway	62	4	6	0.007065196	0.000183252
+path:ocu05169	Epstein-Barr virus infection	149	5	9	0.036843563	0.000190702
+path:ocu00360	Phenylalanine metabolism	10	3	0	0.00020532	1
+path:ocu05162	Measles	91	2	7	0.307418292	0.000227774
+path:ocu05231	Choline metabolism in cancer	71	6	0	0.000235345	1
+path:ocu04911	Insulin secretion	47	5	4	0.000268373	0.003630209
+path:ocu00061	Fatty acid biosynthesis	11	3	0	0.000279762	1
+path:ocu00430	Taurine and hypotaurine metabolism	11	3	1	0.000279762	0.138524052
+path:ocu04970	Salivary secretion	44	3	5	0.016687889	0.000300283
+path:ocu00040	Pentose and glucuronate interconversions	27	4	1	0.000310431	0.306602765
+path:ocu04611	Platelet activation	77	6	4	0.000366548	0.020169085
+path:ocu00480	Glutathione metabolism	46	1	5	0.433711156	0.00037082
+path:ocu03420	Nucleotide excision repair	26	0	4	1	0.000379418
+path:ocu04961	Endocrine and other factor-regulated calcium reabsorption	27	0	4	1	0.000440727
+path:ocu00290	"Valine, leucine and isoleucine biosynthesis"	3	2	0	0.000446114	1
+path:ocu04931	Insulin resistance	80	6	2	0.00045063	0.292709631
+path:ocu05218	Melanoma	48	2	5	0.117275403	0.000453208
+path:ocu04727	GABAergic synapse	53	5	1	0.000473008	0.512883952
+path:ocu04912	GnRH signaling pathway	55	5	5	0.00056213	0.000853064
+path:ocu04150	mTOR signaling pathway	106	1	7	0.730858231	0.000578415
+path:ocu00450	Selenocompound metabolism	14	3	1	0.000600591	0.172866774
+path:ocu04145	Phagosome	107	2	7	0.37876291	0.000611927
+path:ocu04350	TGF-beta signaling pathway	53	2	5	0.137828027	0.000719214
+path:ocu00310	Lysine degradation	35	4	2	0.000857722	0.080355004
+path:ocu04723	Retrograde endocannabinoid signaling	62	5	2	0.000975535	0.203146556
+path:ocu04152	AMPK signaling pathway	86	3	6	0.089181709	0.001072049
+path:ocu04261	Adrenergic signaling in cardiomyocytes	87	4	6	0.022274014	0.001138713
+path:ocu05223	Non-small cell lung cancer	38	4	3	0.001174939	0.014368367
+path:ocu04921	Oxytocin signaling pathway	100	6	6	0.001459676	0.002326434
+path:ocu04310	Wnt signaling pathway	92	0	6	1	0.001520946
+path:ocu01524	Platinum drug resistance	63	2	5	0.180907347	0.00157992
+path:ocu04922	Glucagon signaling pathway	69	5	4	0.001580884	0.013994546
+path:ocu00601	Glycosphingolipid biosynthesis - lacto and neolacto series	18	0	3	1	0.001692963
+path:ocu05020	Prion diseases	18	1	3	0.199361697	0.001692963
+path:ocu05230	Central carbon metabolism in cancer	42	4	4	0.001714771	0.002400542
+path:ocu04977	Vitamin digestion and absorption	20	3	0	0.001781525	1
+path:ocu03410	Base excision repair	19	1	3	0.209195846	0.001990532
+path:ocu04510	Focal adhesion	131	5	7	0.022814554	0.001996392
+path:ocu04066	HIF-1 signaling pathway	73	5	3	0.002030999	0.075509039
+path:ocu04750	Inflammatory mediator regulation of TRP channels	73	5	2	0.002030999	0.257765653
+path:ocu00250	"Alanine, aspartate and glutamate metabolism"	21	3	1	0.002059753	0.247789089
+path:ocu04640	Hematopoietic cell lineage	68	2	5	0.203134716	0.002219278
+path:ocu04726	Serotonergic synapse	76	5	2	0.002425231	0.27275083
+path:ocu00053	Ascorbate and aldarate metabolism	23	3	1	0.002693655	0.26792585
+path:ocu04210	Apoptosis	103	3	6	0.133152552	0.002699185
+path:ocu05202	Transcriptional misregulation in cancer	105	0	6	1	0.002971439
+path:ocu04710	Circadian rhythm	24	3	2	0.003050826	0.041005052
+path:ocu04722	Neurotrophin signaling pathway	74	1	5	0.599677637	0.003213593
+path:ocu04022	cGMP-PKG signaling pathway	107	4	6	0.042852743	0.003263719
+path:ocu04810	Regulation of actin cytoskeleton	143	6	7	0.008484018	0.003265882
+path:ocu04728	Dopaminergic synapse	82	5	4	0.003376145	0.024759673
+path:ocu04010	MAPK signaling pathway	162	7	7	0.003910814	0.006430703
+path:ocu04713	Circadian entrainment	53	4	2	0.004039482	0.159632469
+path:ocu00500	Starch and sucrose metabolism	27	3	0	0.004291387	1
+path:ocu03013	RNA transport	124	6	3	0.004292643	0.233730859
+path:ocu04972	Pancreatic secretion	80	4	5	0.016901254	0.004494454
+path:ocu01523	Antifolate resistance	26	1	3	0.274748206	0.004983288
+path:ocu04020	Calcium signaling pathway	118	5	6	0.015218047	0.005269108
+path:ocu05212	Pancreatic cancer	54	3	4	0.028599651	0.005982804
+path:ocu04725	Cholinergic synapse	62	4	3	0.007065196	0.051021698
+path:ocu05213	Endometrial cancer	33	3	1	0.007584733	0.360834953
+path:ocu00280	"Valine, leucine and isoleucine degradation"	34	3	1	0.008244512	0.369453609
+path:ocu03060	Protein export	12	2	0	0.009124319	1
+path:ocu04916	Melanogenesis	63	3	4	0.042293873	0.010261444
+path:ocu00561	Glycerolipid metabolism	37	3	1	0.010421526	0.394621216
+path:ocu04514	Cell adhesion molecules (CAMs)	98	3	5	0.119522615	0.010458599
+path:ocu04614	Renin-angiotensin system	13	2	1	0.010696706	0.161573459
+path:ocu05014	Amyotrophic lateral sclerosis (ALS)	38	3	2	0.011214091	0.092522054
+path:ocu05016	Huntington's disease	140	2	6	0.514500805	0.011774708
+path:ocu00340	Histidine metabolism	14	2	0	0.012379391	1
+path:ocu04919	Thyroid hormone signaling pathway	68	1	4	0.568772257	0.013320476
+path:ocu04964	Proximal tubule bicarbonate reclamation	16	2	1	0.016064039	0.195000884
+path:ocu00100	Steroid biosynthesis	16	2	1	0.016064039	0.195000884
+path:ocu05134	Legionellosis	44	3	1	0.016687889	0.44952243
+path:ocu04664	Fc epsilon RI signaling pathway	46	3	0	0.018789938	1
+path:ocu04062	Chemokine signaling pathway	115	4	5	0.053305989	0.019703659
+path:ocu00030	Pentose phosphate pathway	18	2	0	0.020155556	1
+path:ocu04071	Sphingolipid signaling pathway	79	3	4	0.073225559	0.021936337
+path:ocu04024	cAMP signaling pathway	130	5	5	0.0221575	0.031328074
+path:ocu00410	beta-Alanine metabolism	19	2	2	0.022347028	0.026542008
+path:ocu04360	Axon guidance	119	1	5	0.77099462	0.022468483
+path:ocu05214	Glioma	45	2	3	0.10535712	0.022570597
+path:ocu05160	Hepatitis C	88	4	2	0.023117083	0.332360333
+path:ocu05414	Dilated cardiomyopathy	50	3	2	0.023414359	0.145549062
+path:ocu00471	D-Glutamine and D-glutamate metabolism	2	1	0	0.024391947	1
+path:ocu00760	Nicotinate and nicotinamide metabolism	20	2	1	0.024632084	0.237514787
+path:ocu00630	Glyoxylate and dicarboxylate metabolism	21	2	0	0.027008119	1
+path:ocu04971	Gastric acid secretion	53	3	3	0.027250857	0.034473639
+path:ocu01521	EGFR tyrosine kinase inhibitor resistance	55	3	1	0.029983313	0.525946566
+path:ocu04610	Complement and coagulation cascades	51	2	3	0.129512292	0.031246289
+path:ocu00592	alpha-Linolenic acid metabolism	23	2	2	0.03202295	0.037917694
+path:ocu00564	Glycerophospholipid metabolism	58	3	2	0.034342508	0.183612274
+path:ocu05032	Morphine addiction	58	3	1	0.034342508	0.544889171
+path:ocu05220	Chronic myeloid leukemia	53	0	3	1	0.034473639
+path:ocu00650	Butanoate metabolism	24	2	1	0.03465678	0.277791971
+path:ocu00052	Galactose metabolism	24	2	0	0.03465678	1
+path:ocu04015	Rap1 signaling pathway	147	5	5	0.035073501	0.048831808
+path:ocu04390	Hippo signaling pathway	93	0	4	1	0.036922765
+path:ocu04621	NOD-like receptor signaling pathway	102	4	4	0.036966233	0.049025881
+path:ocu00640	Propanoate metabolism	25	2	2	0.037371652	0.044183572
+path:ocu04012	ErbB signaling pathway	60	3	1	0.037420913	0.557096813
+path:ocu03018	RNA degradation	61	3	2	0.039011358	0.198239303
+path:ocu05340	Primary immunodeficiency	24	1	2	0.256591618	0.041005052
+path:ocu04080	Neuroactive ligand-receptor interaction	205	6	2	0.041101096	0.765690953
+path:ocu04550	Signaling pathways regulating pluripotency of stem cells	97	3	4	0.116862187	0.042061988
+path:ocu00051	Fructose and mannose metabolism	27	2	1	0.043035107	0.306602765
+path:ocu04658	Th1 and Th2 cell differentiation	64	3	1	0.043985565	0.580542262
+path:ocu00020	Citrate cycle (TCA cycle)	28	2	0	0.045979091	1
+path:ocu04120	Ubiquitin mediated proteolysis	101	2	4	0.352303561	0.047585196
+path:ocu00232	Caffeine metabolism	4	1	0	0.048191483	1
+path:ocu00400	"Phenylalanine, tyrosine and tryptophan biosynthesis"	4	1	0	0.048191483	1
