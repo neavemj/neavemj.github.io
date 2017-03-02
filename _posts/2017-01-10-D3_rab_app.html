@@ -24,10 +24,6 @@ layout: d3_rab_app
    
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
   
-
-
-      <link rel="stylesheet" href="{{"/public/stylesheets/d3_rab_app.css" | prepend:site.baseurl }}">
-     
      <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
      
 </head>
@@ -59,7 +55,7 @@ layout: d3_rab_app
   <div class="container-fluid">
     <div class="row row-eq-height">   
     
-      <div class="col-sm-7">
+      <div class="col-sm-6">
         <div class="chart-wrapper">
           <div class="chart-title">
             Differentially expressed genes in:
@@ -113,7 +109,7 @@ layout: d3_rab_app
         </div>
       </div>
 
-      <div class="col-sm-5">
+      <div class="col-sm-6">
         <div class="chart-wrapper">
           <div class="chart-title">
             Expression scatter plot
@@ -138,16 +134,56 @@ layout: d3_rab_app
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-sm-12">
+    <div class="col-sm-12">
         <div class="chart-wrapper">
           <div class="chart-title">
-            sidebar
+            Significantly enriched pathways in:
+
+		  <select id = "p_opts">
+		  <option value="control_adVskit.kegg">ADULTS compared to KITTENS</option>
+		  <option value="R1_12h_ad.kegg">ADULTS with RHDV-1 after 12 HOURS</option>
+		  <option value="R1_24h_ad.kegg">ADULTS with RHDV-1 after 24 HOURS</option>
+		  <option value="R1_12h_kit.kegg">KITTENS with RHDV-1 after 12 HOURS</option>
+		  <option value="R1_24h_kit.kegg">KITTENS with RHDV-1 after 24 HOURS</option>
+		  <option value="R2_12h_kit.kegg">KITTENS with RHDV-2 after 12 HOURS</option>
+		  <option value="R2_24h_kit.kegg">KITTENS with RHDV-2 after 24 HOURS</option>
+		  </select>
+	  
           </div>
-          <div class="chart-stage">
-            <!--<img data-src="holder.js/100%x350/white">-->
+		  <br>
+          <div class="chart-stage" id="rab_pathway_table">
+			
+            <script src="/matts_js/rab_pathway_table.js" type="text/javascript"></script>
+			<script>         
+			var p_drop_menu = document.getElementById("p_opts");
+			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
+			var p_selected_file = "/matts_data/" + p_selected;
+
+		$("#p_opts").change(function(event) {
+			$("div#rab_pathway_table").html("");
+		
+			var p_drop_menu = document.getElementById("p_opts");
+			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
+			var p_selected_file = "/matts_data/" + p_selected;
+
+			d3.tsv(p_selected_file ,function (data) {
+				var columns = ["Pathway", "Name", "N", "Up", "Down", "P.Up", "P.Down"];
+				pathway_tabulate(data,columns);		
+				});	
+		});
+				
+	$(window).load(function() {
+	     		d3.tsv(p_selected_file ,function (data) {
+				var columns = ["Pathway", "Name", "N", "Up", "Down", "P.Up", "P.Down"];
+				pathway_tabulate(data,columns);
+		})
+		});
+		
+	    </script>
+
           </div>
           <div class="chart-notes">
-            Select comparison
+            Select a pathway to see the logFC of genes within
           </div>
         </div>
       </div>
@@ -216,6 +252,8 @@ layout: d3_rab_app
   <script type="text/javascript" src="../../assets/lib/keen-js/dist/keen.min.js"></script>
   <script type="text/javascript" src="../../assets/js/meta.js"></script>
   <link rel="stylesheet" type="text/css" href="../../assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{{"/public/stylesheets/d3_rab_app.css" | prepend:site.baseurl }}">
+     
 
 </body>
 </html>

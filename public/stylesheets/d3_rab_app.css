@@ -53,3 +53,18 @@ div.tooltip {
     border-radius: 8px;					
 }
 
+.chart-stage {
+	font-size: 12px;
+	    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.dataTables_info {
+	font-size: 10px;
+}
+
+.dataTables_paginate {
+	font-size: 10px;
+}
+

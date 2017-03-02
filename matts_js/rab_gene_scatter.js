@@ -4,7 +4,7 @@ var g_data;
 
 var margin = {top: 40, right: 45, bottom: 60, left: 60},
     width = 460 - margin.left - margin.right,
-    height = 453 - margin.top - margin.bottom;
+    height = 436 - margin.top - margin.bottom;
 
 var xValue = function(d) { return d.condition;};
 var x = d3.scalePoint().range([20, width-20])
