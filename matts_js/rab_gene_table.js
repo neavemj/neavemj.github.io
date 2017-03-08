@@ -32,7 +32,8 @@ var tabulate = function (data,columns) {
 };
 
 var initialize_dataTable = function(){
-	var d_table = $('#rab-table-body').DataTable( {			
+	var d_table = $('#rab-table-body').DataTable( {		
+    "order": [[3, "asc"]],	
 	"scrollY": "350px",
 	"scrollCollapse": false			
 	});
