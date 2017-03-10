@@ -1,6 +1,6 @@
 
 
-var g_data;
+var p_data;
 
 var margin = {top: 40, right: 45, bottom: 60, left: 60},
     width = 460 - margin.left - margin.right,
@@ -20,7 +20,7 @@ var tool = d3.select("body").append("div")
 		 .attr("class", "tooltip")
 		 .style("opacity", 0);
 		
-var svg = d3.select("div#rab_gene_scatter").append("svg")
+var p_svg = d3.select("div#rab_pathway_scatter").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
        .append("g")
@@ -36,12 +36,12 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         });
         
     
-    g_data = data;
+    p_data = data;
 	x.domain(["control","RHDV-1_12","RHDV-1_24","RHDV-2_12","RHDV-2_24"]);
     y.domain([0, d3.max(data, function(d) { return d.rpkm; })]);
 
 // add the x axis
-    svg.append("g")
+    p_svg.append("g")
         .attr("class", "x_axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis)
@@ -54,12 +54,12 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         .attr("transform", "rotate(-45)");
 	
 // add the y axis
-    svg.append("g")
+    p_svg.append("g")
         .attr("class", "y_axis")
         .call(yAxis);
 		
 // y axis text label
-	svg.append("text")
+	p_svg.append("text")
 		.attr("transform", "rotate(-90)")
 	    .attr("y", 0 - margin.left)
         .attr("x",0 - (height / 2))
@@ -68,7 +68,7 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         .text("Reads per Kilobase per Million (rpkm)");  
 
 // now add the scatter points
-    svg.selectAll("matts_bar")
+    p_svg.selectAll("matts_p_bar")
         .data(data).enter()
         .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
         .append("circle")
@@ -78,7 +78,7 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
             } else {
                 return "red";
         }})
-        .attr("class", "matts_bar")
+        .attr("class", "matts_p_bar")
         .attr("cx", function(d) { return x(d.condition); })
         .attr("cy", function(d) { return y(d.rpkm); })
         .attr("r", 5)
@@ -100,14 +100,14 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
 
 		
 // draw legend
-  var legend = svg.selectAll(".legend")
+  var p_legend = p_svg.selectAll(".legend")
       .data(["adult", "kitten"])
     .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   // draw legend colored circles
-  legend.append("circle")
+  p_legend.append("circle")
       .attr("cx", width)
 	  .attr("cy", 6)
       .attr("r", 5)
@@ -119,7 +119,7 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         }});
 
   // draw legend text
-  legend.append("text")
+  p_legend.append("text")
       .attr("x", width + 8)
       .attr("y", 6)
       .attr("dy", ".35em")
@@ -128,22 +128,22 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
 		
 });
 
-function update_plot(gene_name){
+function p_update_plot(gene_name){
 
-    var filt_data = g_data.filter(function(d) { return d.gene == gene_name});
+    var filt_data = p_data.filter(function(d) { return d.gene == gene_name});
     
     y.domain([0, d3.max(filt_data, function(d) { return d.rpkm; })]);
        
     // Select what we want to change
-    var svg = d3.select("div#rab_gene_scatter");
+    var p_svg = d3.select("div#rab_pathway_scatter");
 
     // Make the changes
-    svg.selectAll(".matts_bar")
+    p_svg.selectAll(".matts_p_bar")
             .data(filt_data)
                 .transition()
                 .duration(1000)
                 .attr("cy", function(d) { return y(d.rpkm); });
-    svg.select(".y_axis")
+    p_svg.select(".y_axis")
             .transition()
             .duration(1000)
             .call(yAxis);

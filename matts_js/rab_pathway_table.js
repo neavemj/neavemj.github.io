@@ -34,13 +34,13 @@ var pathway_tabulate = function (data,columns) {
 var initialize_pathway_dataTable = function(){
 	var d_table = $('#rab_pathway_table_body').DataTable( {
     "order": [[1, "desc"]],
-	"scrollY": "350px",
-	"scrollCollapse": false,
+	"scrollY": "200px",
+	"scrollCollapse": false
 	});
  
 $('#rab_pathway_table_body tbody').on( 'click', 'tr', function () {
-	var gene_name = $(this).closest('tr').children().first().text();
-    //update_pathway_plot(gene_name);
+	var pathway_name = $(this).closest('tr').children().first().text();
+    update_barcode(pathway_name);
 	if ( $(this).hasClass('selected') ) {
 		    $(this).removeClass('selected');
 		}
