@@ -84,7 +84,6 @@ function update_barcode(pathway){
 					.style("opacity", 0);
 				})
 			.on("click", function (d) {
-				//console.log(d3.select(this))
 				$('#mattsTabs a[href="#genes"]').tab('show');
 			})
 			.transition()
