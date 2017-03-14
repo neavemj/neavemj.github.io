@@ -34,6 +34,7 @@ var tabulate = function (data,columns) {
 var initialize_dataTable = function(){
 	var d_table = $('#rab-table-body').DataTable( {		
     "order": [[3, "asc"]],	
+	"pageLength": 50,
 	"scrollY": "350px",
 	"scrollCollapse": false			
 	});

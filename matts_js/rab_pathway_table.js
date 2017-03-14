@@ -34,6 +34,7 @@ var pathway_tabulate = function (data,columns) {
 var initialize_pathway_dataTable = function(){
 	var d_table = $('#rab_pathway_table_body').DataTable( {
     "order": [[5, "asc"]],
+	"pageLength": 50,
 	"scrollY": "200px",
 	"scrollCollapse": false
 	});
