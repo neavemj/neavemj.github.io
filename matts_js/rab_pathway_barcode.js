@@ -37,7 +37,9 @@ var b_svg = d3.select("div#rab_pathway_barcode").append("svg")
 			  
 // read in data
 
-d3.tsv("/matts_data/control_adVskit_go_melt", function(f_data) {
+function load_barcode_data(p_selected_file){
+	
+d3.tsv(p_selected_file, function(f_data) {
 	
 	// convert logFC to integer
 	f_data.forEach(function(d) {
@@ -47,7 +49,7 @@ d3.tsv("/matts_data/control_adVskit_go_melt", function(f_data) {
 	b_data = f_data;
 	
 });
-
+};
 
 function update_barcode(pathway){
 	
@@ -59,15 +61,30 @@ function update_barcode(pathway){
 	// select svg for changing
 	var b_lines = b_svg.selectAll(".gene_lines").data(b_filt, function(d) { return d.gene; });
 	
+	// add color gradient for logFC
+	b_svg.append("linearGradient")
+      .attr("id", "log-gradient")
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", 0).attr("y1", 0)
+      .attr("x2", "100%").attr("y2", 0)
+    .selectAll("stop")
+      .data([
+        {offset: 0, color: "steelblue"},
+        {offset: 3, color: "red"}
+      ])
+    .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
+	
 	// make the changes
 	
 	b_lines.enter()
 			.append("rect")
 			.attr("class", "gene_lines")
-			.attr("width", '2px')
+			.attr("width", '3px')
 			.attr("y", '-10px')
 			.attr("height", '100px')
-			.style("fill", "steelblue")
+			.style("fill", "url(#log-gradient")
 			.on("mouseover", function(d) {
 				d3.select(this).classed("hover", true);
 				b_tool.transition()
@@ -85,12 +102,14 @@ function update_barcode(pathway){
 				})
 			.on("click", function (d) {
 				$('#mattsTabs a[href="#genes"]').tab('show');
+				update_plot(d.gene);
+				$('#current_gene_name').text(d.gene);
 			})
 			.transition()
 			.duration(1000)
 			.attr("x", function(d) { return b_x(d.logFC); })
 
-	b_lines.exit().remove();
+	b_lines.exit().transition().duration(500).style("opacity", 0).remove();
 		
 	b_svg.select(".x_axis")
 		.transition()

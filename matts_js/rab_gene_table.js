@@ -41,6 +41,7 @@ var initialize_dataTable = function(){
 $('#rab-table-body tbody').on( 'click', 'tr', function () {
 	var gene_name = $(this).closest('tr').children().first().text();
     update_plot(gene_name);
+	$('#current_gene_name').text(gene_name);
 	if ( $(this).hasClass('selected') ) {
 		    $(this).removeClass('selected');
 		}

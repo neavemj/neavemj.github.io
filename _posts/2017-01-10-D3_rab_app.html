@@ -109,7 +109,7 @@ layout: d3_rab_app
 
       <div class="col-sm-6">
         <div class="chart-wrapper">
-          <div class="chart-title">
+          <div class="chart-title" id="current_gene_name">
             Expression scatter plot
           </div>
 	  <br>
@@ -139,9 +139,8 @@ layout: d3_rab_app
 
 		  <select id = "p_opts">
 		  <option value="control_adVskit.go">ADULTS compared to KITTENS</option>
-		  <option value="R1_12h_ad.go">ADULTS with RHDV-1 after 12 HOURS</option>
+		  <option value="control_kitVsad.go">KITTENS compared to ADULTS</option>
 		  <option value="R1_24h_ad.go">ADULTS with RHDV-1 after 24 HOURS</option>
-		  <option value="R1_12h_kit.go">KITTENS with RHDV-1 after 12 HOURS</option>
 		  <option value="R1_24h_kit.go">KITTENS with RHDV-1 after 24 HOURS</option>
 		  <option value="R2_12h_kit.go">KITTENS with RHDV-2 after 12 HOURS</option>
 		  <option value="R2_24h_kit.go">KITTENS with RHDV-2 after 24 HOURS</option>
@@ -156,6 +155,7 @@ layout: d3_rab_app
 			var p_drop_menu = document.getElementById("p_opts");
 			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
 			var p_selected_file = "/matts_data/" + p_selected;
+			var p_selected_data = "/matts_data/" + p_selected + ".melt2";
 
 		$("#p_opts").change(function(event) {
 			$("div#rab_pathway_table").html("");
@@ -163,18 +163,21 @@ layout: d3_rab_app
 			var p_drop_menu = document.getElementById("p_opts");
 			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
 			var p_selected_file = "/matts_data/" + p_selected;
+			var p_selected_data = "/matts_data/" + p_selected + ".melt2"; 
 
 			d3.tsv(p_selected_file ,function (data) {
 				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic"];
 				pathway_tabulate(data,p_columns);		
 				});	
+				load_barcode_data(p_selected_data);
 		});
 				
 	$(window).load(function() {
 	     		d3.tsv(p_selected_file ,function (data) {
 				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic"];
 				pathway_tabulate(data,p_columns);
-		})
+		});
+				load_barcode_data(p_selected_data);
 		});
 		
 	    </script>
