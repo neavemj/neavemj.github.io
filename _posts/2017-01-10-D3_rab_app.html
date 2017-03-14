@@ -155,7 +155,7 @@ layout: d3_rab_app
 			var p_drop_menu = document.getElementById("p_opts");
 			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
 			var p_selected_file = "/matts_data/" + p_selected;
-			var p_selected_data = "/matts_data/" + p_selected + ".melt2";
+			var p_selected_data = "/matts_data/" + p_selected + ".melt";
 
 		$("#p_opts").change(function(event) {
 			$("div#rab_pathway_table").html("");
@@ -163,7 +163,7 @@ layout: d3_rab_app
 			var p_drop_menu = document.getElementById("p_opts");
 			var p_selected = p_drop_menu.options[p_drop_menu.selectedIndex].value;
 			var p_selected_file = "/matts_data/" + p_selected;
-			var p_selected_data = "/matts_data/" + p_selected + ".melt2"; 
+			var p_selected_data = "/matts_data/" + p_selected + ".melt"; 
 
 			d3.tsv(p_selected_file ,function (data) {
 				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic"];
