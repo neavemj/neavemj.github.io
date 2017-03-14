@@ -34,7 +34,22 @@ var b_svg = d3.select("div#rab_pathway_barcode").append("svg")
 		.attr("y", b_height + 35)
 		.attr("x", ((b_width - b_margin.left)  / 2) - 35)
 		.text("log fold change");
-			  
+
+// add color gradient for logFC
+	b_svg.append("linearGradient")
+      .attr("id", "log-gradient")
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", 0).attr("y1", 0)
+      .attr("x2", "100%").attr("y2", 0)
+    .selectAll("stop")
+      .data([
+        {offset: "0%", color: "steelblue"},
+        {offset: "100%", color: "red"}
+      ])
+    .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
+		
 // read in data
 
 function load_barcode_data(p_selected_file){
@@ -58,21 +73,6 @@ function update_barcode(pathway){
 	
 	b_x.domain([d3.min(b_filt, function(d) { return d.logFC; }), d3.max(b_filt, function(d) { return d.logFC; })]);
 	
-	// add color gradient for logFC
-	b_svg.append("linearGradient")
-      .attr("id", "log-gradient")
-      .attr("gradientUnits", "userSpaceOnUse")
-      .attr("x1", 0).attr("y1", 0)
-      .attr("x2", "100%").attr("y2", 0)
-    .selectAll("stop")
-      .data([
-        {offset: 0, color: "steelblue"},
-        {offset: 3, color: "red"}
-      ])
-    .enter().append("stop")
-      .attr("offset", function(d) { return d.offset; })
-      .attr("stop-color", function(d) { return d.color; });
-	
 	// select svg for changing and link the new pathway data
 	var b_lines = b_svg.selectAll(".gene_lines")
 		.data(b_filt, function(d) { return d.gene; });
@@ -90,7 +90,7 @@ function update_barcode(pathway){
 			.attr("width", '3px')
 			.attr("y", '-10px')
 			.attr("height", '100px')
-			.style("fill", "url(#log-gradient")
+			.style("fill", "url(#log-gradient)")
 			.on("mouseover", function(d) {
 				d3.select(this).classed("hover", true);
 				b_tool.transition()
