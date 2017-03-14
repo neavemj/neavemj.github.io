@@ -6,7 +6,7 @@ var b_margin = {top: 10, right: 10, bottom: 40, left: 10},
     b_width = 900 - b_margin.left - b_margin.right,
     b_height = 150 - b_margin.top - b_margin.bottom;
 
-var b_x = d3.scaleLinear().range([0, b_width]);
+var b_x = d3.scaleLinear().range([10, b_width-10]);
 var b_xAxis = d3.axisBottom()
         .scale(b_x)
         .ticks(10);
@@ -58,9 +58,6 @@ function update_barcode(pathway){
 	
 	b_x.domain([d3.min(b_filt, function(d) { return d.logFC; }), d3.max(b_filt, function(d) { return d.logFC; })]);
 	
-	// select svg for changing
-	var b_lines = b_svg.selectAll(".gene_lines").data(b_filt, function(d) { return d.gene; });
-	
 	// add color gradient for logFC
 	b_svg.append("linearGradient")
       .attr("id", "log-gradient")
@@ -76,7 +73,16 @@ function update_barcode(pathway){
       .attr("offset", function(d) { return d.offset; })
       .attr("stop-color", function(d) { return d.color; });
 	
-	// make the changes
+	// select svg for changing and link the new pathway data
+	var b_lines = b_svg.selectAll(".gene_lines")
+		.data(b_filt, function(d) { return d.gene; });
+
+	// make the 'update' changes, i.e. those that are not entering or exiting
+	// UPDATE
+	b_lines.transition().duration(1000).attr("x", function(d) { return b_x(d.logFC); });
+	
+	// add new lines from the enter selection
+	// ENTER
 	
 	b_lines.enter()
 			.append("rect")
@@ -104,13 +110,14 @@ function update_barcode(pathway){
 				$('#mattsTabs a[href="#genes"]').tab('show');
 				update_plot(d.gene);
 				$('#current_gene_name').text(d.gene);
-			})
-			.transition()
-			.duration(1000)
-			.attr("x", function(d) { return b_x(d.logFC); })
+			})	
+			.transition().duration(1000).attr("x", function(d) { return b_x(d.logFC); });
 
+	// remove lines that are no longer needed from the exit selection
+	// EXIT	
 	b_lines.exit().transition().duration(500).style("opacity", 0).remove();
-		
+	
+	// update the x axis info
 	b_svg.select(".x_axis")
 		.transition()
 		.duration(1000)

@@ -66,3 +66,10 @@ div.tooltip {
 	font-size: 10px;
 }
 
+.gene_lines {
+	cursor: pointer;
+}
+
+tr {
+	cursor: pointer;
+}
