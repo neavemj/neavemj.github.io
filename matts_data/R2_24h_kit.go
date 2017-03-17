@@ -1,4 +1,4 @@
-GO.ID	Term	Annotated	Significant	Expected	classic
+GO.ID	Term	Annotated	Significant	Expected	classic_pvalue
 GO:0045071	negative regulation of viral genome repl...	27	20	3.23	1.20E-13
 GO:0071260	cellular response to mechanical stimulus	34	19	4.07	8.50E-10
 GO:0051607	defense response to virus	106	46	12.68	2.80E-09

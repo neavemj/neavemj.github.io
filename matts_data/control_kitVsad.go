@@ -1,4 +1,4 @@
-GO.ID	Term	Annotated	Significant	Expected	classic
+GO.ID	Term	Annotated	Significant	Expected	classic_pvalue
 GO:0006270	DNA replication initiation	18	13	0.83	2.80E-14
 GO:0007059	chromosome segregation	203	57	9.41	1.10E-09
 GO:0090307	mitotic spindle assembly	31	11	1.44	5.10E-09

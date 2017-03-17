@@ -1,4 +1,4 @@
-GO.ID	Term	Annotated	Significant	Expected	classic
+GO.ID	Term	Annotated	Significant	Expected	classic_pvalue
 GO:0051607	defense response to virus	106	29	1.72	2.40E-19
 GO:0045071	negative regulation of viral genome repl...	27	12	0.44	3.50E-15
 GO:0006955	immune response	672	70	10.92	5.70E-13

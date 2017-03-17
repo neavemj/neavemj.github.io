@@ -1,9 +1,5 @@
 
 
-.matts_bar.hover { 
-	opacity: .5;
-    }
-
 h1, h1bl, h2, h3, h4, h5, h6 {
   color: #EC4E3B;
   margin: 0 0 10px;
@@ -73,3 +69,11 @@ div.tooltip {
 tr {
 	cursor: pointer;
 }
+
+.matts_bar.hover { 
+	opacity: .5;
+    }
+	
+.gene_lines.hover { 
+	opacity: .5;
+    }

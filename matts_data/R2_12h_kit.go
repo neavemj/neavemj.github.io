@@ -1,4 +1,4 @@
-GO.ID	Term	Annotated	Significant	Expected	classic
+GO.ID	Term	Annotated	Significant	Expected	classic_pvalue
 GO:0005975	carbohydrate metabolic process	515	23	9.76	2.60E-08
 GO:0051968	positive regulation of synaptic transmis...	10	4	0.19	2.40E-05
 GO:0045332	phospholipid translocation	21	5	0.4	3.70E-05

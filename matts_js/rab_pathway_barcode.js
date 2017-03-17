@@ -106,10 +106,17 @@ function update_barcode(pathway){
 					.duration(0)
 					.style("opacity", 0);
 				})
-			.on("click", function (d) {
+			.on("click", function (d) {	
+				var new_gene = d.gene;
+				$('#current_gene_name').text("LOADING...");	
+				load_scatter_data("/matts_data/pathway_genes.edgeR_rpkm.tsv", true, new_gene);
 				$('#mattsTabs a[href="#genes"]').tab('show');
-				update_plot(d.gene);
-				$('#current_gene_name').text(d.gene);
+				$("div#rab-table").html("");
+				d3.tsv("/matts_data/geneID_description.txt", function(data) {
+					var cols = ["ensembl_gene_id", "description"];		
+					var gene_data = data.filter(function(d) { return d.ensembl_gene_id == new_gene});
+					tabulate(gene_data,cols,false);
+				});
 			})	
 			.transition().duration(1000).attr("x", function(d) { return b_x(d.logFC); });
 

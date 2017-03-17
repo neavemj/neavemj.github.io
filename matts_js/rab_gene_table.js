@@ -1,4 +1,7 @@
-var tabulate = function (data,columns) {
+// create a html table from given csv file
+// init_dt is a boolean; whether or not to initialize a jquery DataTable
+
+var tabulate = function (data,columns,init_dt) {
   var table = d3.select('div#rab-table').append('table')
           .attr("class", "table display tableSection")
           .attr("id", "rab-table-body")
@@ -26,7 +29,11 @@ var tabulate = function (data,columns) {
       .enter()
     .append('td')
       .text(function (d) { return d.value })
-  initialize_dataTable();
+	  
+  if(init_dt == true) {
+	initialize_dataTable();
+  }
+  
   return table;
   
 };
@@ -39,7 +46,11 @@ var initialize_dataTable = function(){
 	"scrollCollapse": false			
 	});
  
-$('#rab-table-body tbody').on( 'click', 'tr', function () {
+ $(window).bind('resize', function() {
+	 d_table.columns.adjust();
+ });
+ 
+ $('#rab-table-body tbody').on( 'click', 'tr', function () {
 	var gene_name = $(this).closest('tr').children().first().text();
     update_plot(gene_name);
 	$('#current_gene_name').text(gene_name);
@@ -52,3 +63,4 @@ $('#rab-table-body tbody').on( 'click', 'tr', function () {
 	}		
 	});
 };
+

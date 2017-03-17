@@ -11,6 +11,8 @@ var x = d3.scalePoint().range([20, width-20])
 var xAxis = d3.axisBottom()
         .scale(x);
 
+x.domain(["control","RHDV-1_12","RHDV-1_24","RHDV-2_12","RHDV-2_24"]);
+		
 var y = d3.scaleLinear().range([height, 0]);
 var yAxis = d3.axisLeft()
         .scale(y)
@@ -27,19 +29,6 @@ var svg = d3.select("div#rab_gene_scatter").append("svg")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
        
-// read in data
-     
-d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
-    
-        data.forEach(function(d) {
-        d.rpkm = +d.rpkm;
-        });
-        
-    
-    g_data = data;
-	x.domain(["control","RHDV-1_12","RHDV-1_24","RHDV-2_12","RHDV-2_24"]);
-    y.domain([0, d3.max(data, function(d) { return d.rpkm; })]);
-
 // add the x axis
     svg.append("g")
         .attr("class", "x_axis")
@@ -67,10 +56,91 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         .style("text-anchor", "middle")
         .text("Reads per Kilobase per Million (rpkm)");  
 
-// now add the scatter points
-    svg.selectAll("matts_bar")
-        .data(data).enter()
-        .filter(function(d) { return d.gene == "ENSOCUG00000000001"})
+// draw legend
+  var legend = svg.selectAll(".legend")
+      .data(["adult", "kitten"])
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+// draw legend colored circles
+  legend.append("circle")
+      .attr("cx", width)
+	  .attr("cy", 6)
+      .attr("r", 5)
+      .style("fill", function(d) { 
+            if (d == "kitten") {
+                return "steelblue";
+            } else {
+                return "red";
+        }});
+
+// draw legend text
+  legend.append("text")
+      .attr("x", width + 8)
+      .attr("y", 6)
+      .attr("dy", ".35em")
+      .style("text-anchor", "start")
+      .text(function(d) { return d;})
+	  
+// read in data
+// global variable to check if datafile is already loaded
+// if its already loaded don't want to waste time re-loading
+// also includes a boolean if a gene should be plotted following data load
+
+var loaded_data = "not_loaded"; 
+ 
+function load_scatter_data(data_file, plot_gene, new_gene){
+	
+if(loaded_data != data_file){
+
+console.log("loading new file");
+$('#current_gene_name').text("LOADING...");
+
+d3.tsv(data_file, function(data) {
+    
+        data.forEach(function(d) {
+        d.rpkm = +d.rpkm;
+        });    
+    
+    g_data = data;
+	loaded_data = data_file;
+	
+	$('#current_gene_name').text("Expression scatter plot");
+	
+	if(plot_gene == true){
+		update_plot(new_gene);
+		return;
+}
+});
+};
+	if(plot_gene == true){
+		update_plot(new_gene);
+		return;
+}
+};
+
+function update_plot(gene_name){
+
+	// filter the data for this particular gene
+    var filt_data = g_data.filter(function(d) { return d.gene == gene_name});
+    
+
+    y.domain([0, d3.max(filt_data, function(d) { return d.rpkm; })]);
+       
+    // Select what we want to change
+	var scatter_points = svg.selectAll(".matts_bar")
+		.data(filt_data)
+
+    // Make the update changes
+	//UPDATE
+	scatter_points.transition().duration(1000)
+		.attr("cy", function(d) { return y(d.rpkm); });
+	
+	// add new spots from the enter selection
+	// note this will only happen once in this case
+	// ENTER
+	scatter_points.enter()
         .append("circle")
         .style("fill", function(d) { 
             if (d.age == "kitten") {
@@ -80,7 +150,6 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
         }})
         .attr("class", "matts_bar")
         .attr("cx", function(d) { return x(d.condition); })
-        .attr("cy", function(d) { return y(d.rpkm); })
         .attr("r", 5)
 		.on("mouseover", function(d) {
 			d3.select(this).classed("hover", true);
@@ -96,57 +165,19 @@ d3.tsv("/matts_data/sig_genes.edgeR_rpkm.tsv", function(data) {
 			tool.transition()
 				.duration(0)
 				.style("opacity", 0);
-		});
-
+		})
+		.transition().duration(1000).attr("cy", function(d) { return y(d.rpkm); });
 		
-// draw legend
-  var legend = svg.selectAll(".legend")
-      .data(["adult", "kitten"])
-    .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-  // draw legend colored circles
-  legend.append("circle")
-      .attr("cx", width)
-	  .attr("cy", 6)
-      .attr("r", 5)
-      .style("fill", function(d) { 
-            if (d == "kitten") {
-                return "steelblue";
-            } else {
-                return "red";
-        }});
-
-  // draw legend text
-  legend.append("text")
-      .attr("x", width + 8)
-      .attr("y", 6)
-      .attr("dy", ".35em")
-      .style("text-anchor", "start")
-      .text(function(d) { return d;})
+		// no need for an EXIT section
 		
-});
-
-function update_plot(gene_name){
-
-    var filt_data = g_data.filter(function(d) { return d.gene == gene_name});
-    
-    y.domain([0, d3.max(filt_data, function(d) { return d.rpkm; })]);
-       
-    // Select what we want to change
-    var svg = d3.select("div#rab_gene_scatter");
-
-    // Make the changes
-    svg.selectAll(".matts_bar")
-            .data(filt_data)
-                .transition()
-                .duration(1000)
-                .attr("cy", function(d) { return y(d.rpkm); });
-    svg.select(".y_axis")
+		// update the y axis info          
+		svg.select(".y_axis")
             .transition()
             .duration(1000)
-            .call(yAxis);
+            .call(yAxis);	
+			
+		// update gene name in window
+		$('#current_gene_name').text(gene_name);
 }
 
 

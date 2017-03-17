@@ -1,4 +1,4 @@
-GO.ID	Term	Annotated	Significant	Expected	classic
+GO.ID	Term	Annotated	Significant	Expected	classic_pvalue
 GO:0055114	oxidation-reduction process	773	60	22.11	6.00E-11
 GO:1901606	alpha-amino acid catabolic process	57	13	1.63	6.60E-07
 GO:0008152	metabolic process	8367	287	239.34	1.00E-05

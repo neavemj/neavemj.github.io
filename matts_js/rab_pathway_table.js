@@ -39,6 +39,10 @@ var initialize_pathway_dataTable = function(){
 	"scrollCollapse": false
 	});
  
+ $(window).bind('resize', function() {
+	 d_table.columns.adjust();
+ });
+ 
 $('#rab_pathway_table_body tbody').on( 'click', 'tr', function () {
 	var pathway_name = $(this).closest('tr').children().first().text();
     update_barcode(pathway_name);

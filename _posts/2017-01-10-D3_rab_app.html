@@ -40,10 +40,12 @@ layout: d3_rab_app
         <ul class="nav nav-pills navbar-nav navbar-left" id="mattsTabs">
         
           <li class="active"><a data-toggle="tab" href="#genes" id="gene_click">Genes</a></li>
-          <li><a data-toggle="tab" href="#pathways" id="path_click">Pathways</a></li>
-          <li><a data-toggle="tab" href="#venn">Venn</a></li>
+          <li><a data-toggle="tab" href="#pathways" id="path_click">Pathways</a></li>	  
+<!--		  <li><a data-toggle="tab" href="#venn">Venn</a></li>
           <li><a data-toggle="tab" href="#ordinations">Ordinations</a></li>
-        </ul>
+ -->  
+		
+		</ul>
       </div>
     </div>
   </div>
@@ -81,20 +83,22 @@ layout: d3_rab_app
 		$("#opts").change(function(event) {
 			$("div#rab-table").html("");
 		
+			load_scatter_data("/matts_data/sig_genes.edgeR_rpkm.tsv", false, "none");
 			var drop_menu = document.getElementById("opts");
 			var selected = drop_menu.options[drop_menu.selectedIndex].value;
 			var selected_file = "/matts_data/" + selected + ".txt";
 
 			d3.tsv(selected_file ,function (data) {
 				var columns = ["ensembl_gene_id", "description", "logFC", "FDR"];
-				tabulate(data,columns);		
+				tabulate(data,columns,true);		
 				});	
 		});
 				
 	$(window).load(function() {
 	     		d3.tsv(selected_file ,function (data) {
 				var columns = ["ensembl_gene_id", "description", "logFC", "FDR"]
-				tabulate(data,columns)
+				tabulate(data,columns,true)
+				load_scatter_data("/matts_data/sig_genes.edgeR_rpkm.tsv", false, "none")
 		})
 		});
 		
@@ -166,7 +170,7 @@ layout: d3_rab_app
 			var p_selected_data = "/matts_data/" + p_selected + ".melt"; 
 
 			d3.tsv(p_selected_file ,function (data) {
-				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic"];
+				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic_pvalue"];
 				pathway_tabulate(data,p_columns);		
 				});	
 				load_barcode_data(p_selected_data);
@@ -174,17 +178,22 @@ layout: d3_rab_app
 				
 	$(window).load(function() {
 	     		d3.tsv(p_selected_file ,function (data) {
-				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic"];
+				var p_columns = ["GO.ID", "Term", "Annotated", "Significant", "Expected", "classic_pvalue"];
 				pathway_tabulate(data,p_columns);
 		});
 				load_barcode_data(p_selected_data);
+
+				$("a[data-toggle=\"tab\"]").on("shown.bs.tab", function (e) {
+					$($.fn.dataTable.tables(true)).DataTable()
+						.columns.adjust()
+				});
 		});
 		
 	    </script>
 
           </div>
           <div class="chart-notes">
-            Select a pathway to see the logFC of genes within
+            Select a pathway to see the genes it contains
           </div>
         </div>
       </div>
@@ -204,7 +213,8 @@ layout: d3_rab_app
           
    	</div>
           <div class="chart-notes">
-            Hover over a bar to see gene name
+            Hover over a bar to see gene name <br>
+			Click a gene to see its expression
           </div>
         </div>
       </div>
