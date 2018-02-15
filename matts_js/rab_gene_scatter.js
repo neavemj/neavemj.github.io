@@ -11,7 +11,7 @@ var x = d3.scalePoint().range([20, width-20])
 var xAxis = d3.axisBottom()
         .scale(x);
 
-x.domain(["control","RHDV-1_12","RHDV-1_24","RHDV-2_12","RHDV-2_24"]);
+x.domain(["control","GI.1 12hpi","GI.1 24hpi","GI.2 12hpi","GI.2 24hpi"]);
 		
 var y = d3.scaleLinear().range([height, 0]);
 var yAxis = d3.axisLeft()
